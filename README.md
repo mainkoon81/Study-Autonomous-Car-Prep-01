@@ -11,10 +11,10 @@ When a problem can be framed in the language of matrices, it's often possible to
 
 ------------------------------------------------------------------------------------------------------------
 
+## 1. Kalman Filters
+Estimate future locations and velocities based on data. 
 
-
-
-
+performing a **measurement** meant updating our belief by a multiplicative factor, while **moving** involved performing a convolution.
 
 
 
