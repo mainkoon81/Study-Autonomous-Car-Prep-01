@@ -88,7 +88,6 @@ test_output = predict_state(test_state, test_dt)
      - `A1 = initial_velocity*dt `
    - In A2, the width is our change in time `dt`, and the height is the change in velocity over that time `acceleration*dt`.
      - `A2 = 0.5*dv**2`
- - total displacement: A1+A2, these two equations, together, make up our motion model for constant acceleration.
    - `displacement = initial_velocity*dt + 0.5*dv**2` 
  
  
