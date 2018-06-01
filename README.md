@@ -39,7 +39,7 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
  - The Kalman Filter simply repeats the sense and move (measurement and prediction) steps to localize the car as it’s moving!
 <img src="https://user-images.githubusercontent.com/31917400/40847073-3ee63692-65b3-11e8-85ef-72febf5c43d6.png" />
  
- - The Takeaway: The beauty of Kalman filters is that they combine somewhat inaccurate sensor measurements with somewhat inaccurate predictions of motion to get a filtered location estimate that is better than any estimates that come from only sensor readings or only knowledge about movement.
+ - [The Takeaway]: The beauty of Kalman filters is that they combine somewhat inaccurate sensor measurements with somewhat inaccurate predictions of motion to get a filtered location estimate that is better than any estimates that come from only sensor readings or only knowledge about movement.
  
 > STATE
  - In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state".
@@ -54,9 +54,12 @@ predicted_state = [150, 50]
  - the **state** gives us all the information we need to form predictions about a car's future location. But how to represent and how it changes over time?
 <img src="https://user-images.githubusercontent.com/31917400/40849581-393d5822-65ba-11e8-90d0-dbe5439a8cbd.jpg" />
 
- - The Takeaway: In order to predict where a car will be at a future point in time, you rely on a motion model.
- - Uncertainty: It’s important to note, that no motion model is perfect; it’s a challenge to account for outside factors like wind or elevation, or even things like tire slippage, and so on.
+ - [The Takeaway]: In order to predict where a car will be at a future point in time, you rely on a **motion model**.
+ - It’s important to note, that no motion model is perfect; it’s a challenge to account for outside factors like wind or elevation, or even things like tire slippage, and so on.
+
+The `predict_state( )` should take in a state and a change in time, dt (ex. 3 for 3 seconds) and it should output a new, predicted state based on a constant motion model. This function also assumes that all units are in `m, m/s, s, etc`.
 ```
+
 
 ```
 
