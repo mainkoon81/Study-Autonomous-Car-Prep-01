@@ -6,7 +6,7 @@ A Kalman Filter is an algorithm which uses noisy sensor measurements (and Bayes'
 #### 2. State
 What is the "state" of a self driving car? What quantities do we need to keep track of when programming a car to drive itself? How roboticists think about "state" and how to use a programming tool called object oriented programming to manage that "state".
 
-#### 3. Matrices and Transformations
+#### 3. Matrices and Transformations of State
 When a problem can be framed in the language of matrices, it's often possible to find programmatic solutions which are effective and very fast.
 
 ------------------------------------------------------------------------------------------------------------
