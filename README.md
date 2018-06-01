@@ -87,8 +87,8 @@ test_output = predict_state(test_state, test_dt)
    - A1 is the same area as in the constant velocity model:
      - `A1 = initial_velocity*dt `
    - In A2, the width is our change in time: `dt`, and the height is the **change in velocity over that time**: `dv`.
-     - `A2 = 0.5*acceleration*dt**2`
-   - `displacement = initial_velocity*dt + 0.5*dv**2` 
+     - `A2 = 0.5*acceleration*dt*dt`
+   - `displacement = initial_velocity*dt + 0.5*dv*dt` 
  
  
 
