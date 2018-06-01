@@ -25,9 +25,10 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
    - Rather than estimating entire distribution as a histogram, we maintain the 'mu', 'variance' that is our best estimate of the location of our object we want to find.
 
 > Measurement & Motion
- - Kalman filter iterates 2 updates- measurement, motion. This is identical to the situation before in localization where we got a measurement then we took a motion. 
+ - Kalman filter iterates 2 updates- 'measurement', 'motion'. This is identical to the situation before in localization where we got a measurement then we took a motion. 
    - **Measurement:** meant updating our belief (and renormalizing our distribution, using BayesRule; product).
    - **Motion:** meant keeping track of where all of our probability "went" when we moved (using the law of Total Probability; convolution).
+<img src="https://user-images.githubusercontent.com/31917400/40843318-7ce1a914-65a8-11e8-942a-f0a1086f046c.jpg" />
    
    
 
