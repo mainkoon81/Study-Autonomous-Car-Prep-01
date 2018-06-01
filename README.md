@@ -24,8 +24,8 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
    - the area underneath sums up to 1 
    - Rather than estimating entire distribution as a histogram, we maintain the 'mu', 'variance' that is our best estimate of the location of our object we want to find.
 
-
-   
+> Measurement & Motion
+we   
 
 
 
