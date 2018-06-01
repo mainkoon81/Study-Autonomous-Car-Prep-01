@@ -1,9 +1,9 @@
 # Study-00-math
 
-#### 1. Introduction to Kalman Filters
+#### 1. Kalman Filters
 A Kalman Filter is an algorithm which uses noisy sensor measurements (and Bayes' Rule) to produce reliable estimates of unknown quantities (like where a vehicle is likely to be in 3 seconds).
 
-#### 2. State and Object Oriented Programming
+#### 2. State
 What is the "state" of a self driving car? What quantities do we need to keep track of when programming a car to drive itself? How roboticists think about "state" and how to use a programming tool called object oriented programming to manage that "state".
 
 #### 3. Matrices and Transformations
@@ -41,7 +41,7 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
  
  - [The Takeaway]: The beauty of Kalman filters is that they combine somewhat inaccurate sensor measurements with somewhat inaccurate predictions of motion to get a filtered location estimate that is better than any estimates that come from only sensor readings or only knowledge about movement.
  
-> STATE
+## 2. STATE
  - In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state".
  - 'the **state** of system: When we localize our car, we care about only the car's 'position(x)' and 'movement(v)', and they are a set of values.
 ```
