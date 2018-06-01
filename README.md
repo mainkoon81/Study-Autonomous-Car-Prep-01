@@ -14,7 +14,8 @@ When a problem can be framed in the language of matrices, it's often possible to
 ## 1. Kalman Filters
 : Estimate future locations and velocities based on data.
  - Markov Model says our world is divided into **discrete grids**, and we assign to each grid a certain probability. Such a representation over spaces is called **histogram**.
-
+ 
+> Intro
 Performing a **measurement** meant updating our belief by a multiplicative factor, while **moving** involved performing a convolution.
 <img src="https://user-images.githubusercontent.com/31917400/40812124-13f41562-652c-11e8-9bae-b4731167c731.jpg" />
 
@@ -24,7 +25,7 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
    - the area underneath sums up to 1 
    - Rather than estimating entire distribution as a histogram, we maintain the 'mu', 'variance' that is our best estimate of the location of our object we want to find.
 
-> UPDATE: Measurement & Motion (in the 1d-world)
+> UPDATE: Measurement & Motion
  - Kalman filter iterates 2 updates- 'measurement', 'motion'. This is identical to the situation before in localization where we got a measurement then we took a motion. 
    - **Measurement:** meant updating our belief (and renormalizing our distribution, using BayesRule; product).
    - **Motion:** meant keeping track of where all of our probability "went" when we moved (using the law of Total Probability; convolution).
@@ -34,13 +35,28 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
 
 <img src="https://user-images.githubusercontent.com/31917400/40846947-e0d91e8e-65b2-11e8-80f0-7199a081f09c.jpg" />
 
-> STATE (in the 2d,3d-world)  
- - In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state".
  - Localization: All self-driving cars go through the same series of steps to safely navigate through the world. The first step is localization. Before cars can safely navigate, they first use sensors and other collected data to best estimate where they are in the world.
  - The Kalman Filter simply repeats the sense and move (measurement and prediction) steps to localize the car as it’s moving!
 <img src="https://user-images.githubusercontent.com/31917400/40847073-3ee63692-65b3-11e8-85ef-72febf5c43d6.png" />
  
  - The Takeaway: The beauty of Kalman filters is that they combine somewhat inaccurate sensor measurements with somewhat inaccurate predictions of motion to get a filtered location estimate that is better than any estimates that come from only sensor readings or only knowledge about movement.
+ 
+> STATE
+ - In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state".
+ - 'the **state** of system: When we localize our car, we care about only the car's 'position(x)' and 'movement(v)', and they are a set of values.
+```
+x = 0
+velocity = 50
+initial_state = [x, velocity]
+
+predicted_state = [150, 50]
+```
+ - the **state** gives us all the information we need to form predictions about a car's future location. But how to represent and how it changes over time?
+<img src="https://user-images.githubusercontent.com/31917400/40849581-393d5822-65ba-11e8-90d0-dbe5439a8cbd.jpg" />
+
+ - The Takeaway: In order to predict where a car will be at a future point in time, you rely on a motion model.
+ - Uncertainty: It’s important to note, that no motion model is perfect; it’s a challenge to account for outside factors like wind or elevation, or even things like tire slippage, and so on.
+ 
  
 
 
