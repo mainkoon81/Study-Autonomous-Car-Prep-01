@@ -24,7 +24,7 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
    - the area underneath sums up to 1 
    - Rather than estimating entire distribution as a histogram, we maintain the 'mu', 'variance' that is our best estimate of the location of our object we want to find.
 
-> Measurement & Motion
+> UPDATE: Measurement & Motion (in the 1d-world)
  - Kalman filter iterates 2 updates- 'measurement', 'motion'. This is identical to the situation before in localization where we got a measurement then we took a motion. 
    - **Measurement:** meant updating our belief (and renormalizing our distribution, using BayesRule; product).
    - **Motion:** meant keeping track of where all of our probability "went" when we moved (using the law of Total Probability; convolution).
@@ -32,8 +32,14 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
 
 <img src="https://user-images.githubusercontent.com/31917400/40845114-9d457186-65ad-11e8-8e1a-545ee7c4e66f.jpg" />
 
-   
+<img src="https://user-images.githubusercontent.com/31917400/40846947-e0d91e8e-65b2-11e8-80f0-7199a081f09c.jpg" />
 
+> STATE (in the 2d,3d-world)  
+ - In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state".
+ - Localization: All self-driving cars go through the same series of steps to safely navigate through the world. The first step is localization. Before cars can safely navigate, they first use sensors and other collected data to best estimate where they are in the world.
+ - The Kalman Filter simply repeats the sense and move (measurement and prediction) steps to localize the car as it’s moving!
+ 
+ 
 
 
 
