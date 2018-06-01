@@ -86,8 +86,8 @@ test_output = predict_state(test_state, test_dt)
  - Displacement can be calculated by finding the area under the line in between t1 and t2. This area can be calculated by breaking this area into two distinct shapes; A1 and A2.
    - A1 is the same area as in the constant velocity model:
      - `A1 = initial_velocity*dt `
-   - In A2, the width is our change in time `dt`, and the height is the change in velocity over that time `acceleration*dt`.
-     - `A2 = 0.5*dv**2`
+   - In A2, the width is our change in time: `dt`, and the height is the **change in velocity over that time**: `dv`.
+     - `A2 = 0.5*acceleration*dt**2`
    - `displacement = initial_velocity*dt + 0.5*dv**2` 
  
  
