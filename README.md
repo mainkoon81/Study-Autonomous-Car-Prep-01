@@ -30,7 +30,7 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
    - **Motion:** meant keeping track of where all of our probability "went" when we moved (using the law of Total Probability; convolution).
 <img src="https://user-images.githubusercontent.com/31917400/40843872-4ff26a7c-65aa-11e8-812f-f80f24a6597e.jpg" />
 
-<img src="https://user-images.githubusercontent.com/31917400/40844302-79476610-65ab-11e8-8541-1c98a27e647d.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/40845114-9d457186-65ad-11e8-8e1a-545ee7c4e66f.jpg" />
 
    
 
