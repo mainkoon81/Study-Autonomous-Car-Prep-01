@@ -69,21 +69,27 @@ test_state = [10, 3]
 test_dt = 5
 test_output = predict_state(test_state, test_dt)
 ```
-Motion models are also referred to as kinematic equations.
+> Two Motion Models(kinematic equations)
  - Constant Velocity(100m/sec): This model assumes that a car moves at a constant speed. This is the simplest model.
  - Constant Acceleration(10m/sec^2): This model assumes that a car is constantly accelerating; its velocity is changing at a constant rate.
 <img src="https://user-images.githubusercontent.com/31917400/40864491-fea8438e-65eb-11e8-8c1b-c371faf23a16.png" />
-
-Displacement: How much the car has moved is called the displacement. If the difference between t2 and t1 is one second, then we'll have moved (100m/sec)*1sec = 100m. If the difference between t2 and t1 is two seconds, then we'll have moved (100m/sec)*2sec = 200m. The displacement is always = (100m/sec)*(t2-t1). `displacement = velocity*dt`
- - Displacement can also be thought of as the area under the line and within the given time interval.
  
+#### How much the car has moved?
+**Displacement in Constant Velocity Model:** 
+ - Displacement can also be thought of as the area under the line within the given time interval.
+   - `displacement = initial_velocity*dt`(where dt = t2-t1)
  
- - Changing Velocity: For this motion model, we know that the velocity is constantly changing, and increasing +10m/s each second. This can be represented by this kinematic equation (where dv is the change in velocity)
- - the current velocity: `v = initial_velocity + acceleration*dt`
- - Displacement can be calculated by finding the area under the line in between t1 and t2, similar to our constant velocity equation but a slightly different shape. This area can be calculated by breaking this area into two distinct shapes; a simple rectangle, A1, and a triangle, A2.
-   - A1 is the same area as in the constant velocity model, so `A1 = initial_velocity*dt `
-   - In A2, the width is our change in time `(t2-t1) or dt`, and the height is the change in velocity over that time `acceleration*dt` so `A2 = 0.5*acceleration*dt**2`.
- - Motion Model: our total displacement, A1+A2 ,can be represented by the equation: `displacement = initial_velocity*dt + 0.5*acceleration*dt**2` and we also know that our velocity over time changes according to the equation: `dv = acceleration*dt`. And these two equations, together, make up our motion model for constant acceleration.
+**Displacement in Constant Acceleration Model:** 
+ - Velocity
+   - Changing Velocity over time: `dv = acceleration*dt`
+   - the current Velocity: `v = initial_velocity + dv`
+ - Displacement can be calculated by finding the area under the line in between t1 and t2. This area can be calculated by breaking this area into two distinct shapes; A1 and A2.
+   - A1 is the same area as in the constant velocity model:
+     - `A1 = initial_velocity*dt `
+   - In A2, the width is our change in time `dt`, and the height is the change in velocity over that time `acceleration*dt`.
+     - `A2 = 0.5*dv**2`
+ - total displacement: A1+A2, these two equations, together, make up our motion model for constant acceleration.
+   - `displacement = initial_velocity*dt + 0.5*dv**2` 
  
  
 
