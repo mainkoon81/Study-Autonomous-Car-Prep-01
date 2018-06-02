@@ -39,7 +39,7 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
  - The Kalman Filter simply repeats the sense and move (measurement and prediction) steps to localize the car as it’s moving!
 <img src="https://user-images.githubusercontent.com/31917400/40847073-3ee63692-65b3-11e8-85ef-72febf5c43d6.png" />
  
- - [The Takeaway]: The beauty of Kalman filters is that they combine somewhat inaccurate sensor measurements with somewhat inaccurate predictions of motion to get a filtered location estimate that is better than any estimates that come from only sensor readings or only knowledge about movement.
+ - [Takeaway]: The beauty of Kalman filters is that they combine somewhat inaccurate sensor measurements with somewhat inaccurate predictions of motion to get a filtered location estimate that is better than any estimates that come from only sensor readings or only knowledge about movement.
  
 ## 2. STATE
  - In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state".
@@ -53,13 +53,13 @@ def predict_state(state, dt):
     predicted_x = state[0] + dt*state[1]
     predicted_vel = state[1] 
     predicted_state = [predicted_x, predicted_vel]
-    return predicted_state
+    return(predicted_state)
 
 test_state = [10, 3]
 test_dt = 5
 test_output = predict_state(test_state, test_dt)
 ```
- - [The Takeaway]: In order to predict where a car will be at a future point in time, you rely on a **motion model**.
+ - [Takeaway]: In order to predict where a car will be at a future point in time, you rely on a **motion model**.
  - It’s important to note, that no motion model is perfect; it’s a challenge to account for outside factors like wind or elevation, or even things like tire slippage, and so on.
 > Two Motion Models(kinematic equations)
  - Constant Velocity(100m/sec): This model assumes that a car moves at a constant speed. This is the simplest model.
@@ -67,7 +67,9 @@ test_output = predict_state(test_state, test_dt)
 <img src="https://user-images.githubusercontent.com/31917400/40864491-fea8438e-65eb-11e8-8c1b-c371faf23a16.png" />
  
 #### How much the car has moved?
-**Displacement in Constant Velocity Model:** 
+**Displacement in Constant Velocity Model:**
+ - Velocity
+   - the current Velocity: `v = initial_velocity`
  - Displacement can also be thought of as the area under the line within the given time interval.
    - `displacement = initial_velocity*dt`(where 'dt=t2-t1')
 
@@ -81,7 +83,8 @@ dt = 3
 new_x = x + initial_velocity*dt
 predicted_state = [new_x, initial_velocity]  
 ``` 
-**Displacement in Constant Acceleration Model:** 
+**Displacement in Constant Acceleration Model:**
+ - Acceleration
  - Velocity
    - Changing Velocity over time: `dv = acceleration*dt`
    - the current Velocity: `v = initial_velocity + dv`
@@ -92,7 +95,7 @@ predicted_state = [new_x, initial_velocity]
      - `A2 = 0.5*acceleration*dt*dt`
    - `displacement = initial_velocity*dt + 0.5*dv*dt` 
 
-Predicted state after 3 seconds have elapsed: this state has a new value for x, and a new value for velocity (but the acceleration stays the same).   
+Predicted State after 3 seconds have elapsed: this state has a new value for x, and a new value for velocity (but the acceleration stays the same).   
 ```
 x = 0
 initial_velocity = 50
@@ -104,12 +107,24 @@ new_x = x + initial_velocity*dt + 0.5*acc*dt**2
 new_vel = velocity + acc*dt
 predicted_state = [new_x, new_vel, acc] 
 ```
+#### Then back to the question: 
+ - How to represent **State**? : object-oriented programming
+   - Using variables to represent State values
+   - Using customized function to change those values
+ - How to predict **State**?: Linear Algebra  
+   - Using vector, matices to keep track of State and change it.
+#### Always moving
+Self-driving cars constantly monitor their **state**. So, movement(v) and localization(x) have to occur in parallel. If we use a Kalman filter for localization, this means that as a car moves, the Kalman filter has to keep coming up with new state estimates.
 
-
-
-
-
-
+Here, `predict_state( )` we wrote previously takes in a **current state** and a change in time, **dt**, and returns the new state estimate(based on a constant velocity model).
+```
+initial_state = [10, 60]
+state_est1 = predict_state(initial_state, 2)
+state_est2 = predict_state(state_est1, 3)
+state_est3 = predict_state(state_est2, 1)
+state_est4 = predict_state(state_est3, 4)
+```
+[10, 60] - [130, 60] - [310, 60] - [370, 60] - [610, 60]
 
 
 
