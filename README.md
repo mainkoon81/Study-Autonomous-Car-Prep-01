@@ -125,6 +125,9 @@ state_est3 = predict_state(state_est2, 1)
 state_est4 = predict_state(state_est3, 4)
 ```
 #### # Object
+Objects hold a state; they hold a group of variables/properties and functions.
+<img src="https://user-images.githubusercontent.com/31917400/40880031-e6666272-66a1-11e8-998b-79bff37b4b29.jpg" />
+
 
 
 
