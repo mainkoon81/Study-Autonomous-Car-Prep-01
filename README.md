@@ -66,7 +66,7 @@ test_output = predict_state(test_state, test_dt)
  - Constant Acceleration(10m/sec^2): This model assumes that a car is constantly accelerating; its velocity is changing at a constant rate.
 <img src="https://user-images.githubusercontent.com/31917400/40864491-fea8438e-65eb-11e8-8c1b-c371faf23a16.png" />
  
-#### How much the car has moved?
+#### # How much the car has moved?
 **Displacement in Constant Velocity Model:**
  - Velocity
    - the current Velocity: `v = initial_velocity`
@@ -107,16 +107,16 @@ new_x = x + initial_velocity*dt + 0.5*acc*dt**2
 new_vel = velocity + acc*dt
 predicted_state = [new_x, new_vel, acc] 
 ```
-#### Then back to the question: 
+#### # Then back to the question: 
  - How to represent **State**? : object-oriented programming
    - Using variables to represent State values
    - Using customized function to change those values
  - How to predict **State**?: Linear Algebra  
    - Using vector, matices to keep track of State and change it.
-#### Always moving
+#### # Always moving
 Self-driving cars constantly monitor their **state**. So, movement(v) and localization(x) have to occur in parallel. If we use a Kalman filter for localization, this means that as a car moves, the Kalman filter has to keep coming up with new state estimates.
 
-Here, `predict_state( )` we wrote previously takes in a **current state** and a change in time, **dt**, and returns the new state estimate(based on a constant velocity model).
+Here, `predict_state( )` we wrote previously takes in a **current state** and a change in time, **dt**, and returns the new state estimate(based on a constant velocity model): [10, 60] -> [130, 60] -> [310, 60] -> [370, 60] -> [610, 60]
 ```
 initial_state = [10, 60]
 state_est1 = predict_state(initial_state, 2)
@@ -124,7 +124,8 @@ state_est2 = predict_state(state_est1, 3)
 state_est3 = predict_state(state_est2, 1)
 state_est4 = predict_state(state_est3, 4)
 ```
-[10, 60] - [130, 60] - [310, 60] - [370, 60] - [610, 60]
+#### # Object
+
 
 
 
