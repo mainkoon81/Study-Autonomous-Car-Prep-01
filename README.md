@@ -43,21 +43,11 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
  
 ## 2. STATE
  - In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state".
- - 'the **state** of system: When we localize our car, we care about only the car's 'position(x)' and 'movement(v)', and they are a set of values.
-```
-x = 0
-velocity = 50
-initial_state = [x, velocity]
-
-predicted_state = [150, 50]
-```
+ - the **state** of system: When we localize our car, we care about only the car's 'position(x)' and 'movement(v)', and they are a set of values. `state = [position(x), velocity(v)]`
  - the **state** gives us all the information we need to form predictions about a car's future location. But how to represent and how it changes over time?
 <img src="https://user-images.githubusercontent.com/31917400/40849581-393d5822-65ba-11e8-90d0-dbe5439a8cbd.jpg" />
 
- - [The Takeaway]: In order to predict where a car will be at a future point in time, you rely on a **motion model**.
- - It’s important to note, that no motion model is perfect; it’s a challenge to account for outside factors like wind or elevation, or even things like tire slippage, and so on.
-
-The `predict_state( )` should take in a state and a change in time, dt (ex. 3 for 3 seconds) and it should output a new, predicted state based on a constant motion model. This function also assumes that all units are in `m, m/s, s, etc`. `distance = x + velocity*time`.
+The `predict_state( )` should take in a state and a change in time, dt and it should output a new, predicted state based on a constant motion model. This function also assumes that all units are in `m, m/s, s, etc`, and `distance = x + velocity*dt`.
 ```
 def predict_state(state, dt):
     predicted_x = state[0] + dt*state[1]
@@ -69,6 +59,8 @@ test_state = [10, 3]
 test_dt = 5
 test_output = predict_state(test_state, test_dt)
 ```
+ - [The Takeaway]: In order to predict where a car will be at a future point in time, you rely on a **motion model**.
+ - It’s important to note, that no motion model is perfect; it’s a challenge to account for outside factors like wind or elevation, or even things like tire slippage, and so on.
 > Two Motion Models(kinematic equations)
  - Constant Velocity(100m/sec): This model assumes that a car moves at a constant speed. This is the simplest model.
  - Constant Acceleration(10m/sec^2): This model assumes that a car is constantly accelerating; its velocity is changing at a constant rate.
@@ -77,8 +69,18 @@ test_output = predict_state(test_state, test_dt)
 #### How much the car has moved?
 **Displacement in Constant Velocity Model:** 
  - Displacement can also be thought of as the area under the line within the given time interval.
-   - `displacement = initial_velocity*dt`(where dt = t2-t1)
- 
+   - `displacement = initial_velocity*dt`(where 'dt=t2-t1')
+
+Predicted state after 3 seconds have elapsed: this state has a new value for x, but the same value for velocity.  
+```
+x = 0
+initial_velocity = 50
+initial_state = [x, velocity]
+
+dt = 3
+new_x = x + initial_velocity*dt
+predicted_state = [new_x, initial_velocity]  
+``` 
 **Displacement in Constant Acceleration Model:** 
  - Velocity
    - Changing Velocity over time: `dv = acceleration*dt`
@@ -89,8 +91,21 @@ test_output = predict_state(test_state, test_dt)
    - In A2, the width is our change in time: `dt`, and the height is the **change in velocity over that time**: `dv`.
      - `A2 = 0.5*acceleration*dt*dt`
    - `displacement = initial_velocity*dt + 0.5*dv*dt` 
- 
- 
+
+Predicted state after 3 seconds have elapsed: this state has a new value for x, and a new value for velocity (but the acceleration stays the same).   
+```
+x = 0
+initial_velocity = 50
+acc = -20
+initial_state = [x, initial_velocity, acc]
+
+dt = 3
+new_x = x + initial_velocity*dt + 0.5*acc*dt**2
+new_vel = velocity + acc*dt
+predicted_state = [new_x, new_vel, acc] 
+```
+
+
 
 
 
