@@ -128,6 +128,20 @@ state_est4 = predict_state(state_est3, 4)
 Objects hold a state; they hold a group of variables/properties and functions.
 <img src="https://user-images.githubusercontent.com/31917400/40880031-e6666272-66a1-11e8-998b-79bff37b4b29.jpg" />
 
+Step_1: import the statement('car file') and make a 2D world of 0's, then declare a car's **initial state** variable.
+ - initial_position: [y, x] (top-left corner)
+ - velocity: [vy, vx] (moving to the right)
+```
+import numpy
+import car
+
+height = 4
+width = 6
+world = np.zeros((height, width))
+
+initial_position = [0, 0] 
+velocity = [0, 1] 
+```
 
 
 
