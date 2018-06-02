@@ -44,7 +44,7 @@ Performing a **measurement** meant updating our belief by a multiplicative facto
 ## 2. STATE
  - In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state".
  - the **state** of system: When we localize our car, we care about only the car's 'position(x)' and 'movement(v)', and they are a set of values. `state = [position(x), velocity(v)]`
- - the **state** gives us all the information we need to form predictions about a car's future location. But how to represent and how it changes over time?
+ - the **state** gives us all the information we need to form predictions about a car's future location. But how to predict(how it changes over time) and how to represent?
 <img src="https://user-images.githubusercontent.com/31917400/40849581-393d5822-65ba-11e8-90d0-dbe5439a8cbd.jpg" />
 
 The `predict_state( )` should take in a state and a change in time, dt and it should output a new, predicted state based on a constant motion model. This function also assumes that all units are in `m, m/s, s, etc`, and `distance = x + velocity*dt`.
