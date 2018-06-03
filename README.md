@@ -182,11 +182,11 @@ velocity = self.state[1] ## **[vy, vx]** always ##
         
         self.state[1] = predicted_velocity
 ```
- - Overloading:
+### [Overloading]:
    - The **double underscore** function: (`__init__`, `__repr__`, `__add__`, etc) https://docs.python.org/3/reference/datamodel.html#special-method-names These are special functions that are used by Python in a specific way. We typically don't call these functions directly. Instead, Python calls them automatically based on our use of keywords and operators. For example, `__init__` is called when we create a new object and `__repr__` is called when we tell Python to print the string representation of a specific object.
-   - We can define what happens when we add two car objects together using a + symbol by defining the `__add__` function. For example,
+   - We can define what happens when we add two car objects together using a + symbol by defining the `__add__` function. 
 
-It adds together the state variables. (When we add up two 'object's, this below will happen).
+For example, when we add up two '**object**'s, this below will happen).
 ```
 def __add__(self, other):
     added_state = []
@@ -196,16 +196,15 @@ def __add__(self, other):
 
     return(added_state)
 ```    
-Or.. print out that adding cars is an invalid operation. Print an error message and return the unchanged, first state. 
+Or..Print an error message? and return the unchanged, first state. 
 ```
 def __add__(self, other):
     print('Adding two cars is an invalid operation!')
     return self.state
 ```
-This is called operator overloading. And, in this case, overloading just means: giving more than one meaning to a standard operator like addition. It is useful for writing classes.  
+This is called **operator overloading**. And, in this case, overloading just means: giving **more than one meaning** to a standard operator like (+,-,/,%,stc). It is useful for writing classes.  
 
-> overloading 'color addition'
-The color **class** creates a color from 3 values, r, g, and b (red, green, and blue).
+For example, overloading 'color addition'. The color **class** creates a color from 3 values, r, g, and b (red, green, and blue).
 <img src="https://user-images.githubusercontent.com/31917400/40889632-5f10cfa8-6762-11e8-8916-7a44ba9d80fc.jpg" />
 
 
