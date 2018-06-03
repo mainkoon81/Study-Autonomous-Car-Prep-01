@@ -152,7 +152,7 @@ car_object = car.Car(initial_position, initial_velocity, world)
  
 Step_3: interact with the object...`car_object.move()` , `car_object.turn_left()`, `car_object.display_world()`...
 
-### How to represent State?
+### A. How to represent State?
 Have you ever seen the package inside `import car`? What is class?
 <img src="https://user-images.githubusercontent.com/31917400/40885090-bafb1800-6717-11e8-8408-9934121743a8.jpg" />
 
@@ -194,7 +194,7 @@ For example, in the `move()`
         
         self.state[1] = predicted_velocity
 ```
-### [Overloading]:
+> FYI, Overloading:
    - The **double underscore** function: (`__init__`, `__repr__`, `__add__`, etc) https://docs.python.org/3/reference/datamodel.html#special-method-names These are special functions that are used by Python in a specific way. We typically don't call these functions directly. Instead, Python calls them automatically based on our use of keywords and operators. For example, `__init__` is called when we create a new object and `__repr__` is called when we tell Python to print the string representation of a specific object.
    - We can define what happens when we add two car objects together using a `**+**` symbol by defining the `__add__` function. 
 
@@ -222,6 +222,7 @@ For example, overloading 'color addition'. The color **class** creates a color f
 This will give..
 <img src="https://user-images.githubusercontent.com/31917400/40889751-14146b66-6764-11e8-8081-4cc4a8c48356.jpg" />
 
+### B. State vector
 
 
 
