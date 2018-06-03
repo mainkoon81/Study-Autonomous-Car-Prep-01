@@ -148,10 +148,16 @@ car_object = car.Car(initial_position, velocity, world)
 ```
 Step_3: interact with the object...`car_object.display_world()` , `car_object.move()` , `car_object.turn_left()`..
 
-> class
+### What is class?
 <img src="https://user-images.githubusercontent.com/31917400/40885090-bafb1800-6717-11e8-8408-9934121743a8.jpg" />
 
-
+ - This class allows us to write code like `car.Car()`, which calls a special function: `__init__`.
+ - `__init__` stands for initialize and this function frees up memory and allows us **to create a specific object**. The object can then access all of the functions that are inside the class like `move()` and `turn_left()` and 
+ - The initialization means that a computer now has the space to remember what this object can do and what state it is in at any given moment.
+   - `class **Car**(object)`: this looks a bit like a function declaration, but the word "class" let Python know that the code that follows should describe the **state and functionality** of the object. Objects are always capitalized, like 'Car'. 
+   - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial state variable** are set with statements like `self.state = [position, velocity]`. 
+   - `move()` function uses a constant velocity model to move the car in the direction of its velocity, vx, and vy, and it **updates the state**. `turn_left()` function rotates the velocity values to the left 90 degrees, and it **updates the state**. 
+   
 
 
 
