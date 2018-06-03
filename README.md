@@ -205,6 +205,7 @@ def __add__(self, other):
 This is called operator overloading. And, in this case, overloading just means: giving more than one meaning to a standard operator like addition. It is useful for writing classes.  
 
 > overloading 'color addition'
+The color **class** creates a color from 3 values, r, g, and b (red, green, and blue).
 
 
 
