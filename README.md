@@ -163,10 +163,22 @@ Have you ever seen the package inside `import car`? What is class?
    - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial state variable** are set with statements like `self.state = [position, velocity]`. 
    - `move()` function uses a constant velocity model to move the car in the direction of its velocity, vx, and vy, and it **updates the state**. It mainly offers **'dt'**.
    
-For example,   
+For example, in the `move()`  
 ```   
-self.state = [predicted_position, velocity]
-velocity = self.state[1] ## **[vy, vx]** always ##
+    def move(self, dt=1):
+        height = len(self.world)
+        width = len(self.world[0])
+        
+        position = self.state[0]
+        velocity = self.state[1]
+
+        predicted_position = [(position[0] + velocity[0]*dt) % height, (position[1] + velocity[1]*dt) % width]
+        
+        # Update the state..where "velocity = self.state[1]" ## **[vy, vx]** always ##
+        self.state = [predicted_position, velocity]
+        
+        # Every time the robot moves, add the new position to the path
+        self.path.append(predicted_position)
 ```
    - `turn_left()`: ㄱ(vy -> -vx), and (vx -> vy) function rotates the velocity values to the left 90 degrees, and it **updates the state**. `turn_right()`: r(vy -> vx), and (vx -> -vy) to the right 90 degrees, and it **updates the state**.  
 ```
