@@ -223,7 +223,7 @@ This will give..
 <img src="https://user-images.githubusercontent.com/31917400/40889751-14146b66-6764-11e8-8081-4cc4a8c48356.jpg" />
 
 ### B. State vector and Matrix
-<img src="https://user-images.githubusercontent.com/31917400/40891485-65f11780-677e-11e8-8fc3-573d1b82c2cf.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/40891523-da44fc78-677e-11e8-960b-d04c9afebfd3.jpg" />
 
 
 
