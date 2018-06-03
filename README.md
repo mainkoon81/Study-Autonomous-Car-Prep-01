@@ -206,6 +206,8 @@ This is called operator overloading. And, in this case, overloading just means: 
 
 > overloading 'color addition'
 The color **class** creates a color from 3 values, r, g, and b (red, green, and blue).
+<img src="https://user-images.githubusercontent.com/31917400/40889632-5f10cfa8-6762-11e8-8916-7a44ba9d80fc.jpg" />
+
 
 
 
