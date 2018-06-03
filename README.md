@@ -130,7 +130,7 @@ Objects hold a state; they hold a group of variables/properties and functions.
 
 Step_1: import the statement(car-'class' file) and make a 2D world of 0's, then declare a car's **initial state** variable.
  - initial_position: [y, x] (top-left corner)
- - velocity: [vy, vx] (moving to the right)
+ - initial_velocity: [vy, vx] (moving to the right)
 ```
 import numpy
 import car
@@ -140,11 +140,11 @@ width = 6
 
 world = np.zeros((height, width))
 initial_position = [0, 0] 
-velocity = [0, 1] 
+initial_velocity = [0, 1] 
 ```
 Step_2: initializes the object, and pass in the initial state variables.
 ```
-car_object = car.Car(initial_position, velocity, world)
+car_object = car.Car(initial_position, initial_velocity, world)
 ```
  - `car`: the name of the file
  - `Car()`: initializing function
@@ -184,7 +184,7 @@ velocity = self.state[1] ## **[vy, vx]** always ##
 ```
 ### [Overloading]:
    - The **double underscore** function: (`__init__`, `__repr__`, `__add__`, etc) https://docs.python.org/3/reference/datamodel.html#special-method-names These are special functions that are used by Python in a specific way. We typically don't call these functions directly. Instead, Python calls them automatically based on our use of keywords and operators. For example, `__init__` is called when we create a new object and `__repr__` is called when we tell Python to print the string representation of a specific object.
-   - We can define what happens when we add two car objects together using a + symbol by defining the `__add__` function. 
+   - We can define what happens when we add two car objects together using a `**+**` symbol by defining the `__add__` function. 
 
 For example, when we add up two '**object**'s, this below will happen).
 ```
