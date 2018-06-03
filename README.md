@@ -150,7 +150,7 @@ car_object = car.Car(initial_position, velocity, world)
  - `Car()`: initializing function
  - `self` means the object
  
-Step_3: interact with the object...`car_object.display_world()` , `car_object.move()` , `car_object.turn_left()`..
+Step_3: interact with the object...`car_object.move()` , `car_object.turn_left()`, `car_object.display_world()`...
 
 ### How to represent State?
 What is class?
@@ -162,15 +162,49 @@ What is class?
    - `class **Car**(object)`: this looks a bit like a function declaration, but the word "class" let Python know that the code that follows should describe the **state and functionality** of the object. Objects are always capitalized, like 'Car'. 
    - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial state variable** are set with statements like `self.state = [position, velocity]`. 
    - `move()` function uses a constant velocity model to move the car in the direction of its velocity, vx, and vy, and it **updates the state**. It mainly offers **'dt'**.
-### self.state = [predicted_position, velocity]
-### velocity = self.state[1] = [vy, vx]   
-   - `turn_left()`: ㄱ(vy -> -vx), and (vx -> vy) function rotates the velocity values to the left 90 degrees, and it **updates the state**. 
+   
+For example,   
+```   
+self.state = [predicted_position, velocity]
+velocity = self.state[1] ## **[vy, vx]** always ##
+```
+   - `turn_left()`: ㄱ(vy -> -vx), and (vx -> vy) function rotates the velocity values to the left 90 degrees, and it **updates the state**. `turn_right()`: r(vy -> vx), and (vx -> -vy) to the right 90 degrees, and it **updates the state**.  
+```
+    def turn_left(self):
+        velocity = self.state[1]
+        predicted_velocity = [-velocity[1], velocity[0]]
+        
+        self.state[1] = predicted_velocity
+    
+    def turn_right(self):
+        velocity = self.state[1]
+        predicted_velocity = [velocity[1], -velocity[0]]
+        
+        self.state[1] = predicted_velocity
+```
+ - Overloading:
+   - The **double underscore** function: (`__init__`, `__repr__`, `__add__`, etc) https://docs.python.org/3/reference/datamodel.html#special-method-names These are special functions that are used by Python in a specific way. We typically don't call these functions directly. Instead, Python calls them automatically based on our use of keywords and operators. For example, `__init__` is called when we create a new object and `__repr__` is called when we tell Python to print the string representation of a specific object.
+   - We can define what happens when we add two car objects together using a + symbol by defining the `__add__` function. For example,
 
+It adds together the state variables.
+```
+def __add__(self, other):
+    added_state = []
+    for i in range(self.state):
+        added_value = self.state[i] + other.state[i]
+        added_state.append(added_value)
 
+    return(added_state)
+```    
+Or.. print out that adding cars is an invalid operation. Print an error message and return the unchanged, first state. 
+```
+def __add__(self, other):
+    print('Adding two cars is an invalid operation!')
+    return self.state
+```
+This is called operator overloading. And, in this case, overloading just means: giving more than one meaning to a standard operator like addition. It is useful for writing classes.  
 
-
-
-
+> overloading 'color addition'
 
 
 
