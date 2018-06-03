@@ -146,6 +146,8 @@ Step_2: initializes the object, and pass in the initial state variables.
 ```
 car_object = car.Car(initial_position, velocity, world)
 ```
+ - `car`: the name of the file
+ - `Car()`: initializing function
 Step_3: interact with the object...`car_object.display_world()` , `car_object.move()` , `car_object.turn_left()`..
 
 ### How to represent State?
