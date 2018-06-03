@@ -162,7 +162,7 @@ What is class?
    - `class **Car**(object)`: this looks a bit like a function declaration, but the word "class" let Python know that the code that follows should describe the **state and functionality** of the object. Objects are always capitalized, like 'Car'. 
    - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial state variable** are set with statements like `self.state = [position, velocity]`. 
    - `move()` function uses a constant velocity model to move the car in the direction of its velocity, vx, and vy, and it **updates the state**. It mainly offers **'dt'**.
-   - `turn_left()`: [ㄱ:(vy=-vx), and _|:(vx=vy)] function rotates the velocity values to the left 90 degrees, and it **updates the state**. 
+   - `turn_left()`: ㄱ(vy -> -vx), and (vx -> vy) function rotates the velocity values to the left 90 degrees, and it **updates the state**. 
 
 
 
