@@ -263,8 +263,26 @@ x1feet =[]
 for i in range(len(x1)):
     x1feet.append(meters_to_feet*x1[i])
 ```
-3.Vector Math: **Dot-Product**
- - The tracked vehicle is currently at the state: X1 = [8,7,12,5]. Where will the vehicle be in two seconds?
-
+3.Vector Math: **Dot-Product** 
+ - It involves mutliplying the vectors element by element and then taking the sum of the results.
+ - The tracked vehicle is currently at the state: X1 = [**8**,**7**,12,5]. Where will the vehicle be in two seconds(assuming the constant velocity)?
+   - the new x-position: 8 + 12*2sec = 32
+   - the new y-position: 7 + 5*2sec = 17
+   - if solving each of these equations using the dot product:
+     - [8,7,12,5].[1,0,2,0] = 32
+     - [8,7,12,5].[0,1,0,2] = 17
+   - the final state vector would be: [**32**,**17**,12,5]
+```
+def dotproduct(vector_a, vector_b):
+    if len(vector_a) != len(vector_b):
+        print("error! Vectors must have same length")
+    
+    result = 0
+    for i in range(len(vector_a)):
+        result += vector_a[i]*vector_b[i]
+    return(result)
+    
+x2 = [dotproduct([8, 7, 12, 5], [1, 0, 2, 0]), dotproduct([8, 7, 12, 5], [0, 1, 0, 2]), 12, 5]
+```
 
 
