@@ -226,11 +226,16 @@ This will give..
 <img src="https://user-images.githubusercontent.com/31917400/40891523-da44fc78-677e-11e8-960b-d04c9afebfd3.jpg" />
 
 <img src="https://user-images.githubusercontent.com/31917400/40908445-ab1ce55e-67de-11e8-9a66-718c7047de98.gif" />
-In the world of KalmanFilter(multivariate Gaussian)...we can build a 2-Dimensional Estimate because of the correlation b/w location and velocity. 
+In the world of KalmanFilter(multivariate Gaussian)...we can build a 2-Dimensional Estimate because of the correlation b/w location and velocity.
+ 
 ## x_prime = x + x_dot*delta_t
 <img src="https://user-images.githubusercontent.com/31917400/40915010-5bc1e540-67f2-11e8-97c3-0db98a7ce266.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/40919806-7d71cc0e-6802-11e8-9251-75e3358d0d5a.jpg" />
 
+### So How are you gonna write object tracking code? How to design Kalman filter?
+Kalman filtering, also known as linear quadratic estimation (LQE), is an algorithm that uses a series of measurements observed over time, containing statistical noise and other inaccuracies, and **produces estimates of unknown variables** by estimating a joint probability distribution over the variables for each timeframe.
 
+> Representing State with Matrices
 
 
 
