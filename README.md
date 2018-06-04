@@ -226,6 +226,7 @@ This will give..
 <img src="https://user-images.githubusercontent.com/31917400/40891523-da44fc78-677e-11e8-960b-d04c9afebfd3.jpg" />
 
 In the world of KalmanFilter(multivariate Gaussian)...
+<img src="https://user-images.githubusercontent.com/31917400/40908445-ab1ce55e-67de-11e8-9a66-718c7047de98.gif" />
 
 
 
