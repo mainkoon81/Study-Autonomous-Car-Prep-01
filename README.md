@@ -366,7 +366,8 @@ def matrix_addition(matrixA, matrixB):
 
     return(matrixSum)
 ```
-
+3.Matrix Math: **Multiplication**
+ - In the Kalman filter, every equation involves a matrix multiplication operation. 
 
 
 
