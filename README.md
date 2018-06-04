@@ -313,7 +313,7 @@ for i in range(len(marix)):
          new_ij = matrix[i][j]
 ```
 1.Scalar Math: multiplication (try 'x5')
- - Note the location of `new_row = []`. Where it is initialized. 
+ - Note the location of `new_row = []`. Where it is initialized, When the first iteration ends and is stored up.  
 ```
 new_m = []
 
