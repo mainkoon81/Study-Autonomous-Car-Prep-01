@@ -308,21 +308,22 @@ Looping through Matrices: Because matrices are lists of lists, you will need to 
 ```
 for i in range(len(marix)):
     row = matrix[i]
-    new_row = []
+    new_row = [] 
     for j in range(len(row)):
          new_ij = matrix[i][j]
 ```
 1.Scalar Math: multiplication (try 'x5')
+ - Note the location of `new_row = []`. Where it is initialized. 
 ```
 new_m = []
 
 for i in range(len(m)):
     row = m[i]
-    new_row = []
+    new_row = [] ## Note ##
     for j in range(len(row)):
         new_ij = 5*m[i][j]
         new_row.append(new_ij)
-    new_m.append(new_row)
+    new_m.append(new_row) ## Note ##
     
 def matrix_print(matrix):
     for i in range(len(matrix)):
@@ -334,7 +335,7 @@ def matrix_print(matrix):
 matrix_print(new_m)    
 ```
 2.Matrix Math: **Addition**
-In the Kalman filter, the equation for calculating the **error covariance matrix** after the prediction step includes matrix addition. It means they are all the same size. 
+ - In the Kalman filter, the equation for calculating the **error covariance matrix** after the prediction step includes matrix addition. It means they are all the same size. 
 <img src="https://user-images.githubusercontent.com/31917400/40942772-1acbcdee-6847-11e8-929e-708326017a05.jpg" />
 
 ```
@@ -349,7 +350,22 @@ S[1][1] = A[1][1] + B[1][1]
 ...etc.
 ```
 or
+```
+def matrix_addition(matrixA, matrixB):
+    if len(matrixA) != len(matrixB):
+        print("error! matrices must have same length")
 
+    matrixSum = []
+ 
+    for i in range(len(matrixA)):
+        row = [] ## Note ##
+        for j in range(len(matrixA[i])):
+            r_ij = matrixA[i][j] + matrixB[i][j]
+            row.append(r_ij)
+        matrixSum.append(row) ## Note ##
+
+    return(matrixSum)
+```
 
 
 
