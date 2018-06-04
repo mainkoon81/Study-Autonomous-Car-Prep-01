@@ -241,11 +241,30 @@ Matrices provide a very convenient and compact form for representing a vehicle's
 ```
 state = [distance_x, distance_y, velocity_x, velocity_y, steering_angle, angular_velocity]
 ```
+### # vector calculation
+1.Vector Math: **Addition**
+ - You are tracking the other vehicle. Currently, the other vehicle is 5 meters ahead of you along your x-axis, 2 meters to your left along your y-axis, driving 10 m/s in the x direction and 0 m/s in the y-direction.
+ - The vehicle has moved 3 meters forward in the x-direction, 5 meters forward in the y-direction, has increased its x velocity by 2 m/s and has increased its y velocity by 5 m/s.
+```
+x0 = [5,2,10,0]
+xdelta = [3,5,2,5]
 
+x1 = []
+for i in range(len(x0)):
+    add = x0[i] + xdelta[i]
+    x1.append(add)
+```
+2.Scalar Math: multiplication
+ - You have your current position in meters and current velocity in m/s. But you need to report your results at a company meeting where most people will only be familiar with working in ft rather than meters. Convert your position vector x1 to feet and feet/second.
+```
+meters_to_feet = 1.0 / 0.3048
 
-
-
-
+x1feet =[]
+for i in range(len(x1)):
+    x1feet.append(meters_to_feet*x1[i])
+```
+3.Vector Math: **Dot-Product**
+ - The tracked vehicle is currently at the state: X1 = [8,7,12,5]. Where will the vehicle be in two seconds?
 
 
 
