@@ -264,6 +264,8 @@ for i in range(len(x1)):
     x1feet.append(meters_to_feet*x1[i])
 ```
 3.Vector Math: **Dot-Product** 
+<img src="https://user-images.githubusercontent.com/31917400/40938492-f084d0ec-6839-11e8-9ab0-a1aa387699f8.jpg" />
+
  - It involves mutliplying the vectors element by element and then taking the sum of the results.
  - The tracked vehicle is currently at the state: X1 = [**8**,**7**,12,5]. Where will the vehicle be in two seconds(assuming the constant velocity)?
    - the new x-position: 8 + 12*2sec = 32
