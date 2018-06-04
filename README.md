@@ -228,7 +228,8 @@ This will give..
 In the world of KalmanFilter(multivariate Gaussian)...
 <img src="https://user-images.githubusercontent.com/31917400/40908445-ab1ce55e-67de-11e8-9a66-718c7047de98.gif" />
 
-
+we build a 2-Dimensional Estimate, and 
+<img src="https://user-images.githubusercontent.com/31917400/40915010-5bc1e540-67f2-11e8-97c3-0db98a7ce266.jpg" />
 
 
 
