@@ -312,7 +312,7 @@ for i in range(len(marix)):
     for j in range(len(row)):
          new_ij = matrix[i][j]
 ```
-1.Scalar Math: multiplication (try x 5)
+1.Scalar Math: multiplication (try 'x5')
 ```
 new_m = []
 
@@ -334,6 +334,8 @@ def matrix_print(matrix):
 matrix_print(new_m)    
 ```
 2.Matrix Math: **Addition**
+In the Kalman filter, the equation for calculating the **error covariance matrix** after the prediction step includes matrix addition.
+<img src="https://user-images.githubusercontent.com/31917400/40942772-1acbcdee-6847-11e8-929e-708326017a05.jpg" />
 
 
 
