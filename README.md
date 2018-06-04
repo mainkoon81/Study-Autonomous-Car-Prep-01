@@ -334,9 +334,21 @@ def matrix_print(matrix):
 matrix_print(new_m)    
 ```
 2.Matrix Math: **Addition**
-In the Kalman filter, the equation for calculating the **error covariance matrix** after the prediction step includes matrix addition.
+In the Kalman filter, the equation for calculating the **error covariance matrix** after the prediction step includes matrix addition. It means they are all the same size. 
 <img src="https://user-images.githubusercontent.com/31917400/40942772-1acbcdee-6847-11e8-929e-708326017a05.jpg" />
 
+```
+S[0][0] = A[0][0] + B[0][0]
+S[0][1] = A[0][1] + B[0][1]
+S[0][2] = A[0][2] + B[0][2]
+S[0][3] = A[0][3] + B[0][3]
+.... etc
+
+S[1][0] = A[1][0] + B[1][0]
+S[1][1] = A[1][1] + B[1][1]
+...etc.
+```
+or
 
 
 
