@@ -234,6 +234,7 @@ In the world of KalmanFilter(multivariate Gaussian)...we can build a 2-Dimension
 
 ### So How are you gonna write object tracking code? How to design Kalman filter?
 Kalman filtering, also known as linear quadratic estimation (LQE), is an algorithm that uses a series of measurements observed over time, containing statistical noise and other inaccuracies, and **produces estimates of unknown variables** by estimating a joint probability distribution over the variables for each timeframe.
+<img src="https://user-images.githubusercontent.com/31917400/40940038-68b1b900-683e-11e8-83a3-bf03de561fe0.jpg" />
 
 
 > Representing State with Matrices
@@ -242,6 +243,8 @@ Matrices provide a very convenient and compact form for representing a vehicle's
 state = [distance_x, distance_y, velocity_x, velocity_y, steering_angle, angular_velocity]
 ```
 ### # vector calculation
+Vectors are one part of the Kalman filter equations. In python, a vector can be a simple grid with one row and a column for each element. What if transposed? You can think of a vector as a simple list of values even if the vector is vertical.
+
 1.Vector Math: **Addition**
  - You are tracking the other vehicle. Currently, the other vehicle is 5 meters ahead of you along your x-axis, 2 meters to your left along your y-axis, driving 10 m/s in the x direction and 0 m/s in the y-direction.
  - The vehicle has moved 3 meters forward in the x-direction, 5 meters forward in the y-direction, has increased its x velocity by 2 m/s and has increased its y velocity by 5 m/s.
@@ -286,5 +289,89 @@ def dotproduct(vector_a, vector_b):
     
 x2 = [dotproduct([8, 7, 12, 5], [1, 0, 2, 0]), dotproduct([8, 7, 12, 5], [0, 1, 0, 2]), 12, 5]
 ```
+### # matrix calculation
+What is a matrix? Selection: in the second row last column? `matrix[1][-1]`
+```
+first_row = [17, 25, 6, 2, 16]
+second_row = [6, 1, 8, 4, 22]
+third_row = [17, 8, 54, 15, 65]
+fourth_row = [11, 25, 68, 9, 2]
+
+matrix = [first_row, second_row, third_row, fourth_row]
+```
+If you are treating the vector as a matrix, then you'd need to make a list of lists. And this is a `1 x 5` matrix. We can transpose to `5 x 1` as well.
+```
+first_matrix = [ [17, 25, 6, 2, 16] ]
+first_matrix_T = [ [17],[25],[6],[2],[16] ]
+```
+Looping through Matrices: Because matrices are lists of lists, you will need to use a 'for-loop' inside another for loop. The **outside** for loop iterates over the **rows** and the **inside** for loop iterates over the **columns**.
+```
+for i in range(len(rows)):
+    for j in range(len(columns)):
+         matrix[i][j]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
