@@ -235,7 +235,12 @@ In the world of KalmanFilter(multivariate Gaussian)...we can build a 2-Dimension
 ### So How are you gonna write object tracking code? How to design Kalman filter?
 Kalman filtering, also known as linear quadratic estimation (LQE), is an algorithm that uses a series of measurements observed over time, containing statistical noise and other inaccuracies, and **produces estimates of unknown variables** by estimating a joint probability distribution over the variables for each timeframe.
 
+
 > Representing State with Matrices
+Matrices provide a very convenient and compact form for representing a vehicle's state. Matrices do all of the calculations in just one step. In the constant velocity motion model, and in a two-dimensional world, the state could have:
+```
+state = [distance_x, distance_y, velocity_x, velocity_y, steering_angle, angular_velocity]
+```
 
 
 
