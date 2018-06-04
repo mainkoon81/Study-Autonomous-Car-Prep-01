@@ -306,12 +306,34 @@ first_matrix_T = [ [17],[25],[6],[2],[16] ]
 ```
 Looping through Matrices: Because matrices are lists of lists, you will need to use a 'for-loop' inside another for loop. The **outside** for loop iterates over the **rows** and the **inside** for loop iterates over the **columns**.
 ```
-for i in range(len(rows)):
-    for j in range(len(columns)):
-         matrix[i][j]
+for i in range(len(marix)):
+    row = matrix[i]
+    new_row = []
+    for j in range(len(row)):
+         new_ij = matrix[i][j]
 ```
+1.Scalar Math: multiplication (try x 5)
+```
+new_m = []
 
-
+for i in range(len(m)):
+    row = m[i]
+    new_row = []
+    for j in range(len(row)):
+        new_ij = 5*m[i][j]
+        new_row.append(new_ij)
+    new_m.append(new_row)
+    
+def matrix_print(matrix):
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            print(matrix[i][j], '\t', end='')
+        print('\n')
+    return
+    
+matrix_print(new_m)    
+```
+2.Matrix Math: **Addition**
 
 
 
