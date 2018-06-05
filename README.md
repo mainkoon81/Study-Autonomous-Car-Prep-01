@@ -400,7 +400,7 @@ def matrix_multiplication(matrixA, matrixB):
 4.Matrix Math: **Multiplication(using `transpose()` for programming)**
  - In the Kalman filter, there are equations that required the transpose of a matrix. We don't need `get_row()` and `get_column()` functions anymore because the tranpose essentially takes care of turning columns into row vectors.
 <img src="https://user-images.githubusercontent.com/31917400/40970148-a678eee8-68b1-11e8-9105-8c9eb70b85b5.jpg" />
-<img src="https://user-images.githubusercontent.com/31917400/40973992-1561c832-68be-11e8-9ad8-b2ec1add9615.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/40974805-a21d2698-68c0-11e8-8f89-cc9153729400.jpg" />
 
 ```
 def transpose(matrix):
