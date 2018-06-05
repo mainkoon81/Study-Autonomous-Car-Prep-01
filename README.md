@@ -401,8 +401,16 @@ def matrix_multiplication(matrixA, matrixB):
     return(result)
 ```
 4.Matrix Math: **Transpose**
- - In the Kalman fi
+ - In the Kalman filter, there are equations that required the transpose of a matrix.
+<img src="https://user-images.githubusercontent.com/31917400/40970148-a678eee8-68b1-11e8-9105-8c9eb70b85b5.jpg" />
 
+```
+
+
+
+```
+5.Matrix Math: **Identity Matrix**
+ - In the Kalman filter,
 
 
 
