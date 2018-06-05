@@ -311,7 +311,7 @@ for i in range(len(marix)):
     for j in range(len(row)):
          new_ij = matrix[i][j]
 ```
-1.Scalar Math: multiplication (try 'x5')
+1. Scalar Math: multiplication (try 'x5')
  - Note the location of `new_row = []`. Where it is initialized, When the first iteration ends and is stored up.  
 ```
 new_m = []
@@ -333,7 +333,7 @@ def matrix_print(matrix):
     
 matrix_print(new_m)    
 ```
-2.Matrix Math: **Addition**
+2. Matrix Math: **Addition**
  - In the Kalman filter, the equation for calculating the **error covariance matrix** after the prediction step includes matrix addition. It means they are all the same size. 
 <img src="https://user-images.githubusercontent.com/31917400/40942772-1acbcdee-6847-11e8-929e-708326017a05.jpg" />
 
@@ -364,7 +364,7 @@ def matrix_addition(matrixA, matrixB):
         matrixSum.append(row) ## Note ##
     return(matrixSum)
 ```
-3.Matrix Math: **Multiplication(using `get_row()`, `get_column()` for programming)**
+3. Matrix Math: **Multiplication(using `get_row()`, `get_column()` for programming)**
  - In the Kalman filter, every equation involves a matrix multiplication operation. In matrix multiplication, we calculate the **dot-product** of row one of A and column one of B. 
 ```
 def get_row(matrix, row):
@@ -397,7 +397,7 @@ def matrix_multiplication(matrixA, matrixB):
         result.append(row_result)
     return(result)
 ```
-4.Matrix Math: **Multiplication(using `transpose()` for programming)**
+4. Matrix Math: **Multiplication(using `transpose()` for programming)**
  - In the Kalman filter, there are equations that required the transpose of a matrix. We don't need `get_row()` and `get_column()` functions anymore because the tranpose essentially takes care of turning columns into row vectors.
 <img src="https://user-images.githubusercontent.com/31917400/40970148-a678eee8-68b1-11e8-9105-8c9eb70b85b5.jpg" />
 <img src="https://user-images.githubusercontent.com/31917400/40974805-a21d2698-68c0-11e8-8f89-cc9153729400.jpg" />
@@ -435,11 +435,19 @@ def matrix_multiplication(matrixA, matrixB):
         result.append(new_row)
     return(result)
 ```
-5.**Identity Matrix**
- - **I** is an `n x n` **sqr-matrix** with `1` across the main diagonal and `0` for all other elements. Identity Matrix is like the '1' in scalar world: `AI = IA = A`where although the identity matrix is always square, matrix 'A' does not have to be square. 
+5. **Identity Matrix**
+ - **I** is an `n x n` **sqr-matrix** with `1` across the main diagonal and `0` for all other elements:`np.eye(n)` Identity Matrix is like the '1' in scalar world: `AI = IA = A`where although the identity matrix is always square, matrix 'A' does not have to be square. 
 ```
-
+def identity_matrix(n):
+    m=[[0 for x in range(n)] for y in range(n)]
+    
+    for i in range(n):
+        m[i][i] = 1
+    return m
 ```
+6. **Inverse Matrix** 
+ - When calculating the Kalman filter gain matrix **K**, you will need to take the inverse of the **S** matrix.
+<img src="https://user-images.githubusercontent.com/31917400/40980220-d00610f6-68cf-11e8-8fac-20f8aa0c700f.jpg" />
 
 
 
