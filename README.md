@@ -447,7 +447,10 @@ def identity_matrix(n):
 ```
 6. **Inverse Matrix** 
  - When calculating the Kalman filter gain matrix **K**, you will need to take the inverse of the **S** matrix.
-<img src="https://user-images.githubusercontent.com/31917400/40980481-61ad401a-68d0-11e8-8423-549314bf84b6.jpg" />
+ - In linear algebra, the inverse matrix is analogous to the scalar inverse:
+ - Only square matrices(nxn) have **inverses**(identity matrix is always a square matrix too), but at the same time, not all square matrices have inverses.  
+<img src="https://user-images.githubusercontent.com/31917400/40980824-48bc6f44-68d1-11e8-8d3c-0303332435c4.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/40981273-7b550050-68d2-11e8-9ab2-8cd92959d606.jpg" />
 
 
 
