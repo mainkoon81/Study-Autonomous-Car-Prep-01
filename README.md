@@ -447,7 +447,7 @@ def identity_matrix(n):
 ```
 6. **Inverse Matrix** 
  - When calculating the Kalman filter gain matrix **K**, you will need to take the inverse of the **S** matrix.
-<img src="https://user-images.githubusercontent.com/31917400/40980220-d00610f6-68cf-11e8-8fac-20f8aa0c700f.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/40980481-61ad401a-68d0-11e8-8423-549314bf84b6.jpg" />
 
 
 
