@@ -436,7 +436,8 @@ def matrix_multiplication(matrixA, matrixB):
     return(result)
 ```
 5. **Identity Matrix**
- - **I** is an `n x n` **sqr-matrix** with `1` across the main diagonal and `0` for all other elements:`np.eye(n)` Identity Matrix is like the '1' in scalar world: `AI = IA = A`where although the identity matrix is always square, matrix 'A' does not have to be square. 
+ - **I** is an `n x n` **sqr-matrix** with `1` across the main diagonal and `0` for all other elements:`np.eye(n)` 
+ - Identity Matrix is like the '1' in scalar world: `AI = IA = A`where although the identity matrix is always square, matrix 'A' does not have to be square. 
 ```
 def identity_matrix(n):
     m=[[0 for x in range(n)] for y in range(n)]
@@ -474,8 +475,6 @@ def getMatrixInverse(m):
     if len(m) == 2:   ## special case for 2x2 matrix ##
         return [[m[1][1]/determinant, -1*m[0][1]/determinant],
                 [-1*m[1][0]/determinant, m[0][0]/determinant]]
-
-    ## find matrix of cofactors
     cofactors = []
     for r in range(len(m)):
         cofactorRow = []
