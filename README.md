@@ -205,7 +205,6 @@ def __add__(self, other):
     for i in range(self.state):
         added_value = self.state[i] + other.state[i]
         added_state.append(added_value)
-
     return(added_state)
 ```    
 Or..Print an error message? and return the unchanged, first state. 
@@ -363,10 +362,9 @@ def matrix_addition(matrixA, matrixB):
             r_ij = matrixA[i][j] + matrixB[i][j]
             row.append(r_ij)
         matrixSum.append(row) ## Note ##
-
     return(matrixSum)
 ```
-3.Matrix Math: **Multiplication**
+3.Matrix Math: **Multiplication(using `get_row()`, `get_column()`)**
  - In the Kalman filter, every equation involves a matrix multiplication operation. In matrix multiplication, we calculate the **dot-product** of row one of A and column one of B. 
 ```
 def get_row(matrix, row):
@@ -397,19 +395,46 @@ def matrix_multiplication(matrixA, matrixB):
             dott = dot_product(vec_1, vec_2)
             row_result.append(dott)
         result.append(row_result)
-        
     return(result)
 ```
-4.Matrix Math: **Transpose**
- - In the Kalman filter, there are equations that required the transpose of a matrix.
+4.Matrix Math: **Multiplication(using `transpose()`)**
+ - In the Kalman filter, there are equations that required the transpose of a matrix. We don't need `get_row()` and `get_column()` functions anymore because the tranpose essentially takes care of turning columns into row vectors.
 <img src="https://user-images.githubusercontent.com/31917400/40970148-a678eee8-68b1-11e8-9105-8c9eb70b85b5.jpg" />
 
 ```
+def transpose(matrix):
+    matrix_transpose = []
+
+    for j in range(len(matrix[0])):
+        new_row = []
+        for i in range(len(matrix)):
+            new_row.append(matrix[i][j])
+        matrix_transpose.append(new_row)
+    return(matrix_transpose)
+
+def dot_product(vector_one, vector_two):
+    result = 0
+    for i in range(len(vector_one)):
+        result += vector_one[i]*vector_two[i]
+    return(result)
 
 
-
+def matrix_multiplication(matrixA, matrixB):
+    
+    matrixBT = transpose(matrixB)
+    mrows = len(matrixA)
+    pcol = len(matrixBT)
+    result = []
+    
+    for i in range(mrows):
+        new_row =[]
+        for j in range(pcol):
+            new_val = dot_product(matrixA[i], matrixBT[j])
+            new_row.append(new_val)
+        result.append(new_row)
+    return(result)
 ```
-5.Matrix Math: **Identity Matrix**
+5.**Identity Matrix**
  - In the Kalman filter,
 
 
