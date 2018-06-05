@@ -269,7 +269,7 @@ for i in range(len(x1)):
 3.Vector Math: **Dot-Product** 
 <img src="https://user-images.githubusercontent.com/31917400/40938492-f084d0ec-6839-11e8-9ab0-a1aa387699f8.jpg" />
 
- - It involves mutliplying the vectors element by element and then taking the sum of the results.
+ - It involves mutliplying the vectors element by element and then taking the sum of the results: **element-wise multiplication**. 
  - The tracked vehicle is currently at the state: X1 = [**8**,**7**,12,5]. Where will the vehicle be in two seconds(assuming the constant velocity)?
    - the new x-position: 8 + 12*2sec = 32
    - the new y-position: 7 + 5*2sec = 17
@@ -367,8 +367,41 @@ def matrix_addition(matrixA, matrixB):
     return(matrixSum)
 ```
 3.Matrix Math: **Multiplication**
- - In the Kalman filter, every equation involves a matrix multiplication operation. 
+ - In the Kalman filter, every equation involves a matrix multiplication operation. In matrix multiplication, we calculate the **dot-product** of row one of A and column one of B. 
+```
+def get_row(matrix, row):
+    return(matrix[row])
 
+def get_column(matrix, col):
+    column = []
+    for i in range(len(matrix)):
+        column.append(matrix[i][col])
+    return(column)
+
+def dot_product(vector_one, vector_two):
+    result = 0
+    for i in range(len(vector_one)):
+        result += vector_one[i]*vector_two[i]
+    return(result)
+
+def matrix_multiplication(matrixA, matrixB):
+    m_rows = len(matrixA)
+    p_col = len(matrixB[0])
+    result = []
+
+    for i in range(m_rows):
+        row_result = []
+        for j in range(p_col):
+            vec_1 = get_row(matrixA, i)
+            vec_2 = get_column(matrixB, j)
+            dott = dot_product(vec_1, vec_2)
+            row_result.append(dott)
+        result.append(row_result)
+        
+    return(result)
+```
+4.Matrix Math: **Transpose**
+ - In the Kalman fi
 
 
 
