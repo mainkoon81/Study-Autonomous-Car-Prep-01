@@ -447,10 +447,48 @@ def identity_matrix(n):
 ```
 6. **Inverse Matrix** 
  - When calculating the Kalman filter gain matrix **K**, you will need to take the inverse of the **S** matrix.
- - In linear algebra, the inverse matrix is analogous to the scalar inverse:
+ - In linear algebra, the inverse matrix is analogous to the scalar inverse: `np.linalg.inv(matrix)`
  - Only square matrices(nxn) have **inverses**(identity matrix is always a square matrix too), but at the same time, not all square matrices have inverses.  
 <img src="https://user-images.githubusercontent.com/31917400/40980824-48bc6f44-68d1-11e8-8d3c-0303332435c4.jpg" />
 <img src="https://user-images.githubusercontent.com/31917400/40981273-7b550050-68d2-11e8-9ab2-8cd92959d606.jpg" />
+
+```
+def transposeMatrix(m):
+    return(map(list,zip(*m)))
+
+def getMatrixMinor(m,i,j):
+    return([row[:j] + row[j+1:] for row in (m[:i]+m[i+1:])])
+
+def getMatrixDeternminant(m):
+    if len(m) == 2:  ## base case for 2x2 matrix ##
+        return(m[0][0]*m[1][1]-m[0][1]*m[1][0])
+    determinant = 0
+    for c in range(len(m)):
+        determinant += ((-1)**c)*m[0][c]*getMatrixDeternminant(getMatrixMinor(m,0,c))
+    return(determinant)
+
+def getMatrixInverse(m):
+    if len(m) != len(m[0]):
+        raise ValueError('The matrix must be square')
+    determinant = getMatrixDeternminant(m)
+    if len(m) == 2:   ## special case for 2x2 matrix ##
+        return [[m[1][1]/determinant, -1*m[0][1]/determinant],
+                [-1*m[1][0]/determinant, m[0][0]/determinant]]
+
+    ## find matrix of cofactors
+    cofactors = []
+    for r in range(len(m)):
+        cofactorRow = []
+        for c in range(len(m)):
+            minor = getMatrixMinor(m,r,c)
+            cofactorRow.append(((-1)**(r+c)) * getMatrixDeternminant(minor))
+        cofactors.append(cofactorRow)
+    cofactors = transposeMatrix(cofactors)
+    for r in range(len(cofactors)):
+        for c in range(len(cofactors)):
+            cofactors[r][c] = cofactors[r][c]/determinant
+    return(cofactors)
+```
 
 
 
