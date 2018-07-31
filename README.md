@@ -30,7 +30,8 @@ When a problem can be framed in the language of matrices, it's often possible to
  - Markov Model says our world is divided into **discrete grids**, and we assign to each grid a certain probability. Such a representation over spaces is called **histogram**.
  
 > Intro
-Performing a **measurement** meant updating our belief by a multiplicative factor, while **moving** involved performing a convolution.
+ - **Performing a measurement** meant updating our belief by a multiplicative factor, 
+ - while **moving** involved performing a convolution.
 <img src="https://user-images.githubusercontent.com/31917400/40812124-13f41562-652c-11e8-9bae-b4731167c731.jpg" />
 
  - In Kalman filter, the distribution is given by 'Gaussian':
