@@ -81,7 +81,7 @@ test_output = predict_state(test_state, test_dt)
 <img src="https://user-images.githubusercontent.com/31917400/40864491-fea8438e-65eb-11e8-8c1b-c371faf23a16.png" />
  
 #### # How much the car has moved?
-**Displacement in Constant Velocity Model:**
+**TYPE_1> Displacement in Constant Velocity Model:**
  - Velocity
    - the current Velocity: `v = initial_velocity`
  - Displacement can also be thought of as the area under the line within the given time interval.
@@ -97,7 +97,7 @@ dt = 3
 new_x = x + initial_velocity*dt
 predicted_state = [new_x, initial_velocity]  
 ``` 
-**Displacement in Constant Acceleration Model:**
+**TYPE_2> Displacement in Constant Acceleration Model:**
  - Acceleration
  - Velocity
    - Changing Velocity over time: `dv = acceleration*dt`
