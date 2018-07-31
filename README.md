@@ -57,7 +57,7 @@ When a problem can be framed in the language of matrices, it's often possible to
  
 ## 2. STATE
 
-When you localize a car, you’re interested in only the car’s **position** and it’s **movement**. This is often called the **state** of the car. The **state of any system** is a **set of values** that we care about. In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state". In our case, the state of the car includes the car’s current position, x, and its velocity, v. (how about time????)  `state = [position(x), velocity(v)]`
+When you localize a car, you’re interested in only the car’s **position** and it’s **movement**. This is often called the **state** of the car. The **state of any system** is a **set of values** that we care about. In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state". In our case, the state of the car includes the car’s current position, x, and its velocity, v. (how about time????)  `state = [position_x, velocity_v]`
  - the **state** gives us all the information we need to form predictions about a car's future location. But how to predict(how it changes over time) and how to represent?
 <img src="https://user-images.githubusercontent.com/31917400/40849581-393d5822-65ba-11e8-90d0-dbe5439a8cbd.jpg" />
 
