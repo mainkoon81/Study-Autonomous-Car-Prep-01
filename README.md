@@ -161,12 +161,12 @@ initial_velocity = [0, 1]
 car_object = car.Car(initial_position, initial_velocity, world)
 ```
  - `car`: the name of the file
- - `Car()`: initializing function(defined by `class Car(object):`) 
+ - `Car()`: initializing function(defined by `class Car(object):` in the `car.py` file) 
  
 [Typical-Step_3]: interact with the object...`car_object.move()` , `car_object.turn_left()`, `car_object.display_world()`...
 
 #### # Let's see the detail. How to represent State?
-Have you ever seen the package inside `import car`? What is class?
+How `import car` works? What is class?
 <img src="https://user-images.githubusercontent.com/31917400/40885090-bafb1800-6717-11e8-8408-9934121743a8.jpg" />
 
  - **class** allows us a bunch of codes like `car.Car()`, `__init__`, etc.
