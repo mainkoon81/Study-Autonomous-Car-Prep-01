@@ -137,6 +137,7 @@ predicted_state = [new_x, new_vel, acc]
  - How to predict **State**?: Linear Algebra  
    - Using vector, matices to keep track of State and change it.
 
+# So how to represent State?
 #### # Object
 Objects hold a state; they hold a group of variables/properties and functions.
 <img src="https://user-images.githubusercontent.com/31917400/40880031-e6666272-66a1-11e8-998b-79bff37b4b29.jpg" />
@@ -277,6 +278,7 @@ For example, overloading 'color addition'. The color **class** creates a color f
 This will give..
 <img src="https://user-images.githubusercontent.com/31917400/40889751-14146b66-6764-11e8-8081-4cc4a8c48356.jpg" />
 
+# then how to predict State?
 ### B. State vector and Matrix
 <img src="https://user-images.githubusercontent.com/31917400/40891523-da44fc78-677e-11e8-960b-d04c9afebfd3.jpg" />
 
