@@ -171,23 +171,24 @@ How `import car` works? What is class?
 
  - `__init__` stands for initialize(it frees up memory) and allows us **to create a specific object**(we can call it 'car_object' as above, or 'carla', or 'your mom'). The object can then access all of the functions that are inside the class like `move()` or `turn_left()`. The code right below `__init__` describe what will happen when we creat the object. 
  - Detail:
+   - `class Car(object):`: the word "class" let Python know that the code that follows should describe the **functionality** of the object. Objects are always capitalized, like 'Car'. 
    - `self`: the object
-   - `class **Car**(object)`: this looks a bit like a function declaration, but the word "class" let Python know that the code that follows should describe the **state and functionality** of the object. Objects are always capitalized, like 'Car'. 
-   - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial state variable** are set with statements like `self.state = [position, velocity]`. 
-   - `move()` function uses a constant velocity model to move the car in the direction of its velocity, vx, and vy, and it **updates the state**. It mainly offers **'dt'**.
-   
-For example, in the `move()`  
+   - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial state variable** are set with statements like `self.state = [position, velocity]`.
+   - 
+
+Here, `move()` uses a constant velocity model(we discussed previously) to move the car in the direction of its velocity(v_x and v_y), and it updates the **state**. **'dt'** is offered?
+For example, in the `move()`,   
 ```   
     def move(self, dt=1):
-        height = len(self.world)
-        width = len(self.world[0])
+        height = len(self.world) ##row
+        width = len(self.world[0]) ##col
         
         position = self.state[0]
         velocity = self.state[1]
 
         predicted_position = [(position[0] + velocity[0]*dt) % height, (position[1] + velocity[1]*dt) % width]
         
-        # Update the state..where "velocity = self.state[1]" ## **[vy, vx]** always ##
+        # Update the state..where "velocity = self.state[1]" ## **[v_y, v_x]** always ##
         self.state = [predicted_position, velocity]
         
         # Every time the robot moves, add the new position to the path
