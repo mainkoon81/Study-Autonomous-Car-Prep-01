@@ -169,8 +169,7 @@ car_object = car.Car(initial_position, initial_velocity, world)
 How `import car` works? What is class?
 <img src="https://user-images.githubusercontent.com/31917400/40885090-bafb1800-6717-11e8-8408-9934121743a8.jpg" />
 
- - **class** allows us a bunch of codes like `car.Car()`, `__init__`, etc.
- - `__init__` stands for initialize(it frees up memory) and allows us **to create a specific object**. The object can then access all of the functions that are inside the class like `move()` or `turn_left()`. The code right below `__init__` describe what will happen when we creat the object. 
+ - `__init__` stands for initialize(it frees up memory) and allows us **to create a specific object**(we can call it 'car_object' as above, or 'carla', or 'your mom'). The object can then access all of the functions that are inside the class like `move()` or `turn_left()`. The code right below `__init__` describe what will happen when we creat the object. 
  - Detail:
    - `self`: the object
    - `class **Car**(object)`: this looks a bit like a function declaration, but the word "class" let Python know that the code that follows should describe the **state and functionality** of the object. Objects are always capitalized, like 'Car'. 
