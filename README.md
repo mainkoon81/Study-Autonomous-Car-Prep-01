@@ -263,13 +263,13 @@ def __add__(self, other):
         added_state.append(added_value)
     return(added_state)
 ```    
-Or..Print an error message? and return the unchanged, first state. 
+Or..you may choose to just print an error message? and return the unchanged-first state. 
 ```
 def __add__(self, other):
     print('Adding two cars is an invalid operation!')
     return self.state
 ```
-This is called **operator overloading**. And, in this case, overloading just means: giving **more than one meaning** to a standard operator like (+,-,/,%,stc). It is useful for writing classes.  
+This is called **operator overloading**. And, in this case, overloading just means: giving **more than one meaning** to a standard operator like (+,-,/,%,stc). It is useful for writing classes.
 
 For example, overloading 'color addition'. The color **class** creates a color from 3 values, r, g, and b (red, green, and blue).
 <img src="https://user-images.githubusercontent.com/31917400/40889632-5f10cfa8-6762-11e8-8916-7a44ba9d80fc.jpg" />
