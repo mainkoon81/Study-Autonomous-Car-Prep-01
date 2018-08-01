@@ -252,7 +252,7 @@ For example, in the `move()`,
  - The **double underscore** function: (`__init__`, `__repr__`, `__add__`, etc) https://docs.python.org/3/reference/datamodel.html#special-method-names These are special functions that are used by Python in a specific way. We typically don't call these functions directly. Instead, Python calls them automatically based on our use of keywords and operators. For example, 
    - `__init__` is called when we create a new object.
    - `__repr__` is called when we tell Python to print the string representation of a specific object.
-   - We can define what happens when we add two car objects together using a `**+**` symbol by defining the `__add__` function. 
+   - We can define what happens when we add two car objects together using a `+` symbol by defining the `__add__` function. 
 
 For example, when we add up two '**object**'s, this below will happen).
 ```
