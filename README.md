@@ -185,8 +185,8 @@ Here, `move()` uses a constant velocity model(we discussed previously) to move t
 For example, in the `move()`,   
 ```   
     def move(self, dt=1):
-        height = len(self.world) ##row
-        width = len(self.world[0]) ##col
+        height = len(self.world) ## rows in the grid
+        width = len(self.world[0]) ## col in the grid
         
         position = self.state[0]
         velocity = self.state[1]
