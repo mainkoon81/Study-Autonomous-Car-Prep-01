@@ -162,6 +162,7 @@ car_object = car.Car(initial_position, initial_velocity, world)
 ```
  - `car`: the name of the file
  - `Car()`: initializing function
+ 
 [Typical-Step_3]: interact with the object...`car_object.move()` , `car_object.turn_left()`, `car_object.display_world()`...
 
 #### # Let's see the detail. How to represent State?
