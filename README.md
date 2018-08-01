@@ -96,6 +96,16 @@ dt = 3
 new_x = x + initial_velocity*dt
 predicted_state = [new_x, initial_velocity]  
 ``` 
+**Here comes the 't'**
+ - Here, `predict_state( )` we wrote previously takes in a **current state** and a change in time, **dt**, and returns the new state estimate(based on a constant velocity model): [10, 60] -> [130, 60] -> [310, 60] -> [370, 60] -> [610, 60]
+```
+initial_state = [10, 60]
+state_est1 = predict_state(initial_state, 2)
+state_est2 = predict_state(state_est1, 3)
+state_est3 = predict_state(state_est2, 1)
+state_est4 = predict_state(state_est3, 4)
+```
+
 **TYPE_2> Displacement in Constant Acceleration Model:**
  - Acceleration
  - Velocity
@@ -126,15 +136,7 @@ predicted_state = [new_x, new_vel, acc]
    - Using [customized_function] to change those values
  - How to predict **State**?: Linear Algebra  
    - Using vector, matices to keep track of State and change it.
-#### # Here comes the 't'
-Here, `predict_state( )` we wrote previously takes in a **current state** and a change in time, **dt**, and returns the new state estimate(based on a constant velocity model): [10, 60] -> [130, 60] -> [310, 60] -> [370, 60] -> [610, 60]
-```
-initial_state = [10, 60]
-state_est1 = predict_state(initial_state, 2)
-state_est2 = predict_state(state_est1, 3)
-state_est3 = predict_state(state_est2, 1)
-state_est4 = predict_state(state_est3, 4)
-```
+
 #### # Object
 Objects hold a state; they hold a group of variables/properties and functions.
 <img src="https://user-images.githubusercontent.com/31917400/40880031-e6666272-66a1-11e8-998b-79bff37b4b29.jpg" />
@@ -160,7 +162,6 @@ car_object = car.Car(initial_position, initial_velocity, world)
 ```
  - `car`: the name of the file
  - `Car()`: initializing function
- 
 [Typical-Step_3]: interact with the object...`car_object.move()` , `car_object.turn_left()`, `car_object.display_world()`...
 
 #### # Let's see the detail. How to represent State?
