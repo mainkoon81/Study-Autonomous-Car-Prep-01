@@ -174,8 +174,8 @@ How `import car` works? What is class?
    - `class Car(object):`: the word "class" let Python know that the code that follows should describe the **functionality** of the object. Objects are always capitalized, like 'Car'. 
    - `self`: the object
    - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial variables**(state, world, color, path) are set. For example....
-     - `self.state = [position, velocity]`: This is the moment where the **initial state** is created from the **position** and **velocity** that are passed in.   
-     - `self.world = world`: initial world.
+     - `self.state = [position, velocity]`: This is the moment where the **initial state** is created from the position vector and velocity vector that are passed in.   
+     - `self.world = world`: initial world (will be passed in too). 
      - `self.color = 'r'`: initial color. That's why our car appears red in the grid world.
      - `self.path = []`, `self.path.append(position)`: it's gonna be a list of locations that our car visit. 
 
@@ -212,17 +212,46 @@ For example, in the `move()`,
         predicted_velocity = [velocity[1], -velocity[0]]
         
         self.state[1] = predicted_velocity
+        
+    # Helper function for displaying the world + robot position assumes the world in a 2D numpy array and position is in the form [y, x]. path is a list of positions, and it's an optional argument..
+    
+    def display_world(self):
+        
+        # Store the current position of the car
+        position = self.state[0]
+        
+        # Plot grid of values + initial ticks
+        plt.matshow(self.world, cmap='gray')
+
+        # Set minor axes in between the labels
+        ax=plt.gca()
+        rows = len(self.world)
+        cols = len(self.world[0])
+
+        ax.set_xticks([x-0.5 for x in range(1,cols)],minor=True )
+        ax.set_yticks([y-0.5 for y in range(1,rows)],minor=True)
+
+        # Plot grid on minor axes in gray (width = 2)
+        plt.grid(which='minor',ls='-',lw=2, color='gray')
+
+        # Create a 'x' character that represents the car
+        # ha = horizontal alignment, va = verical
+        ax.text(position[1], position[0], 'x', ha='center', va='center', color=self.color, fontsize=30)
+            
+        # Draw path if it exists
+        if(len(self.path) > 1):
+            # loop through all path indices and draw a dot (unless it's at the car's location)
+            for pos in self.path:
+                if(pos != position):
+                    ax.text(pos[1], pos[0], '.', ha='center', va='baseline', color=self.color, fontsize=30)
+
+        # Display final result
+        plt.show()       
 ```
-
-
-
-
-
-
-
-
-> FYI, Overloading:
-   - The **double underscore** function: (`__init__`, `__repr__`, `__add__`, etc) https://docs.python.org/3/reference/datamodel.html#special-method-names These are special functions that are used by Python in a specific way. We typically don't call these functions directly. Instead, Python calls them automatically based on our use of keywords and operators. For example, `__init__` is called when we create a new object and `__repr__` is called when we tell Python to print the string representation of a specific object.
+#### # FYI, Overloading:
+ - The **double underscore** function: (`__init__`, `__repr__`, `__add__`, etc) https://docs.python.org/3/reference/datamodel.html#special-method-names These are special functions that are used by Python in a specific way. We typically don't call these functions directly. Instead, Python calls them automatically based on our use of keywords and operators. For example, 
+   - `__init__` is called when we create a new object.
+   - `__repr__` is called when we tell Python to print the string representation of a specific object.
    - We can define what happens when we add two car objects together using a `**+**` symbol by defining the `__add__` function. 
 
 For example, when we add up two '**object**'s, this below will happen).
