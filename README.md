@@ -173,8 +173,13 @@ How `import car` works? What is class?
  - Detail:
    - `class Car(object):`: the word "class" let Python know that the code that follows should describe the **functionality** of the object. Objects are always capitalized, like 'Car'. 
    - `self`: the object
-   - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial state variable** are set with statements like `self.state = [position, velocity]`.
-   - 
+   - `__init__` function is responsible for creating space in memory to make a specific object, and it is where **initial variables**(state, world, color, path) are set. For example....
+     - `self.state = [position, velocity]`: This is the moment where the **initial state** is created from the **position** and **velocity** that are passed in.   
+     - `self.world = world`: initial world.
+     - `self.color = 'r'`: initial color. That's why our car appears red in the grid world.
+     - `self.path = []`, `self.path.append(position)`: it's gonna be a list of locations that our car visit. 
+
+All of variables in here are something that our **car_object** keeps track of.  
 
 Here, `move()` uses a constant velocity model(we discussed previously) to move the car in the direction of its velocity(v_x and v_y), and it updates the **state**. **'dt'** is offered?
 For example, in the `move()`,   
@@ -194,7 +199,7 @@ For example, in the `move()`,
         # Every time the robot moves, add the new position to the path
         self.path.append(predicted_position)
 ```
-   - `turn_left()`: ㄱ(vy -> -vx), and (vx -> vy) function rotates the velocity values to the left 90 degrees, and it **updates the state**. `turn_right()`: r(vy -> vx), and (vx -> -vy) to the right 90 degrees, and it **updates the state**.  
+   - `turn_left()`: ㄱ(v_y -> -v_x), and (v_x -> v_y) function rotates the velocity values to the left 90 degrees, and it updates the **state**. `turn_right()`: r(v_y -> v_x), and (v_x -> -v_y) to the right 90 degrees, and it updates the **state**.  
 ```
     def turn_left(self):
         velocity = self.state[1]
@@ -208,6 +213,14 @@ For example, in the `move()`,
         
         self.state[1] = predicted_velocity
 ```
+
+
+
+
+
+
+
+
 > FYI, Overloading:
    - The **double underscore** function: (`__init__`, `__repr__`, `__add__`, etc) https://docs.python.org/3/reference/datamodel.html#special-method-names These are special functions that are used by Python in a specific way. We typically don't call these functions directly. Instead, Python calls them automatically based on our use of keywords and operators. For example, `__init__` is called when we create a new object and `__repr__` is called when we tell Python to print the string representation of a specific object.
    - We can define what happens when we add two car objects together using a `**+**` symbol by defining the `__add__` function. 
