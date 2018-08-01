@@ -57,8 +57,8 @@ When a problem can be framed in the language of matrices, it's often possible to
  
 ## 2. STATE
 
-When you localize a car, you’re interested in only the car’s **position** and it’s **movement**. This is often called the **state** of the car. The **state of any system** is a **set of values** that we care about. In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state". In our case, the state of the car includes the car’s current position, x, and its velocity, v. (how about time????)  `state = [position_x, velocity_v]`
- - the **state** gives us all the information we need to form predictions about a car's future location. But how to predict(how it changes over time) and how to represent?
+When you localize a car, you’re interested in only the car’s **position** and it’s **movement**. This is often called the **state** of the car. The **state of any system** is a **set of values** that we care about. In order to actually make a Kalman Filter in a 2d or 3d world (or "state space" in the language of robotics), we will first need to learn more about what exactly we mean when we use this word "state". In our case, the state of the car includes the car’s current position, x, and its velocity, v. (how about time????)  `state = [position_x, velocity_v]`. The **state** gives us all the information we need to form predictions about a car's future location. Self-driving cars constantly monitor their **State**. So, movement(v) and localization(x) have to occur in parallel. If we use a Kalman filter for localization, this means that as a car moves, the Kalman filter has to keep coming up with new state estimates.
+# Q. But how to predict(how it changes over time) and how to represent?
 <img src="https://user-images.githubusercontent.com/31917400/40849581-393d5822-65ba-11e8-90d0-dbe5439a8cbd.jpg" />
 
 The `predict_state( )` should take in a state and a change in time, dt and it should output a new, predicted state based on a constant motion model. This function also assumes that all units are in `m, m/s, s, etc`, and `distance = x + velocity*dt`.
@@ -80,7 +80,6 @@ test_output = predict_state(test_state, test_dt)
  - Constant Acceleration(10m/sec^2): This model assumes that a car is constantly accelerating; its velocity is changing at a constant rate.
 <img src="https://user-images.githubusercontent.com/31917400/40864491-fea8438e-65eb-11e8-8c1b-c371faf23a16.png" />
  
-#### # How much the car has moved?
 **TYPE_1> Displacement in Constant Velocity Model:**
  - Velocity
    - the current Velocity: `v = initial_velocity`
@@ -121,14 +120,12 @@ new_x = x + initial_velocity*dt + 0.5*acc*dt**2
 new_vel = velocity + acc*dt
 predicted_state = [new_x, new_vel, acc] 
 ```
-#### # Then back to the question: 
- - How to represent **State**? : object-oriented programming
-   - Using variables to represent State values
-   - Using customized function to change those values
+# Then back to the question: 
+ - How to represent **State**? : [object-oriented programming]
+   - Using [variables] to represent State values
+   - Using [customized_function] to change those values
  - How to predict **State**?: Linear Algebra  
    - Using vector, matices to keep track of State and change it.
-#### # Always moving
-Self-driving cars constantly monitor their **state**. So, movement(v) and localization(x) have to occur in parallel. If we use a Kalman filter for localization, this means that as a car moves, the Kalman filter has to keep coming up with new state estimates.
 
 Here, `predict_state( )` we wrote previously takes in a **current state** and a change in time, **dt**, and returns the new state estimate(based on a constant velocity model): [10, 60] -> [130, 60] -> [310, 60] -> [370, 60] -> [610, 60]
 ```
