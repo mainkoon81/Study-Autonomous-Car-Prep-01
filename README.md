@@ -126,7 +126,7 @@ predicted_state = [new_x, new_vel, acc]
    - Using [customized_function] to change those values
  - How to predict **State**?: Linear Algebra  
    - Using vector, matices to keep track of State and change it.
-
+#### # Here comes the 't'
 Here, `predict_state( )` we wrote previously takes in a **current state** and a change in time, **dt**, and returns the new state estimate(based on a constant velocity model): [10, 60] -> [130, 60] -> [310, 60] -> [370, 60] -> [610, 60]
 ```
 initial_state = [10, 60]
@@ -140,7 +140,7 @@ Objects hold a state; they hold a group of variables/properties and functions.
 <img src="https://user-images.githubusercontent.com/31917400/40880031-e6666272-66a1-11e8-998b-79bff37b4b29.jpg" />
 
 #### # How it works? 
-[Typical-Step_1]: import the car-'class' file(car.py) and make a 2D world of 0's(which is our map), then declare a car's **initial state** variable. A velocity also has vertical and horizontal components. 
+[Typical-Step_1]: import the car-'class' file(car.py) and make a 2D world of 0's(which is our map), then declare a car's **initial state** variable. A velocity also has vertical and horizontal components as a position does.
  - initial_position: `[y, x]` (let's say, top-left corner)
  - initial_velocity: `[v, v]` (let's say, moving to the right)
 ```
