@@ -23,6 +23,8 @@ What is the "state" of a self driving car? What quantities do we need to keep tr
 #### 3. Matrices and Transformations of State
 When a problem can be framed in the language of matrices, it's often possible to find programmatic solutions which are effective and very fast.
 
+#### 4. Problem Solving
+
 ------------------------------------------------------------------------------------------------------------
 
 ## 1. Kalman Filters
@@ -547,6 +549,7 @@ def getMatrixInverse(m):
     return(cofactors)
 ```
 
+## 4. ProblemSolving
 
 
 
