@@ -555,8 +555,10 @@ def getMatrixInverse(m):
 
 
 ## 5. The Search Problem(Route-finding)
+> 1. **Breadth-first Search**
  - **TreeSearch**
  - **GraphSearch**
+ - Here, the optimal means finding the shortest path. 
 <img src="https://user-images.githubusercontent.com/31917400/43773718-973e68a4-9a3e-11e8-8f7c-c16633974e2d.jpg" />
 
 we are looking ahead to a modified algorithm that keeps track of **explored states** so that they aren't repeated. In the preliminary algorithm, **A(Arad) is repeated** since we are not keeping track of **explored states**. Ideally, we would not add duplicates from backtracking...(picking Arad is backtracking).
@@ -576,11 +578,28 @@ Then Fagaras leads to our destination and we don't add the path going back becau
    - If we want the shortest path in terms of `total cost`(by adding up the step costs)
    - etc...
 
-> **1. Uniform Cost Search(cheapest-first-search):**
+> **2. Uniform Cost Search(cheapest-first-search)**
+ - Here, optimal means finding the cheapest total-path cost and the shortest path
 <img src="https://user-images.githubusercontent.com/31917400/43790205-ce291ba4-9a69-11e8-9f78-4e7a5e75a66a.jpg" />
 
  - When we've reached the goal-state, we put the **path** onto the **frontier_list** that reaches the destination, but do not stop yet. The algorithm continues to search to find the better path until we pop it off the **frontier_list**. Which path reaches first is not important.
-  
+
+> **3. Depth-first Search**
+ - The opposite of Breadth-first Search: 
+   - Always expand first the longest path, which is the path with the most links in it. 
+   - Then backs up 
+ - Here, optimal means finding the longest path? No, it's not optimal...then why we use it?
+   - because of the **'storage requirement'**
+     - if the tree is infinite, if our destination(goal) is placed at any finite level, Breadth-first Search and Uniform-Cost Search will march down and find it. But not so for Depth-first Search. 
+
+> **4. A-Star Search**
+ - In Uniform-Cost Search, just like a topological map, it expands out to a certain distance, then to the farther, farther..until meet up witht the goal. The search is not really directed at any way towards the goal, it is expanding out everywhere in the space. Depending on where the goal is, and the size of the space, it takes too much time to get the goal. If we want to find it faster, we need to add more knowledge - the **estimate of the distance** from the start state to the goal.
+ - **Greedy-best-firtst Search**: 
+   - It expands the path closest to the goal according to the estimate. (but this not always be the case if there are obstacles along the way.
+   - When it reached the barrier..
+     - continuosly expand out along the barrier to get closer and closer to the goal (it is willing to accept the path longer than other path). 
+     - or explore in the other direction to find much simpler path by popping over the barrier. 
+<img src="https://user-images.githubusercontent.com/31917400/43803586-2eb3dfe6-9a91-11e8-91c4-d62815547720.jpg" />
 
 
 
