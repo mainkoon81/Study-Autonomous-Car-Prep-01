@@ -560,14 +560,22 @@ def getMatrixInverse(m):
 we are looking ahead to a modified algorithm that keeps track of **explored states** so that they aren't repeated. In the preliminary algorithm, **A(Arad) is repeated** since we are not keeping track of **explored states**. Ideally, we would not add duplicates from backtracking...(picking Arad is backtracking).
 <img src="https://user-images.githubusercontent.com/31917400/43776822-fa6281ae-9a48-11e8-9a98-a3a10cfbe4c0.jpg" />
 
- - As exploring the state, we keep track of the **frontier states**. 
- - Behind the frontier is the set of the **explored states**. 
+ - 1. As exploring the state, we keep track of the **frontier states**. 
+ - 2. Behind the frontier is the set of the **explored states**. 
    - We tracking it coz when expanding, we need to detect duplicates.
- - Ahead of the frontier is the set of the unexplored states. 
+ - 3. Ahead of the frontier is the set of the unexplored states. 
 
 But we can avoid this repeated-path problem. The GraphSearch can eliminate the duplicates. 
-<img src="https://user-images.githubusercontent.com/31917400/43782229-bec57800-9a56-11e8-9481-2521440df709.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/43787888-fdc8dcba-9a63-11e8-8607-072e0e64f00f.jpg" />
 
+Then Fagaras leads to our destination and we don't add the path going back because they are in the 'explored_list'. We add the path that ends in Bucharest, but we don't terminate yet. The **goal_test** is not applied when we add a path to the [frontier_list]. It's applied **when we remove that path** from the [frontier_list]. 
+ - Why doesn't our 'TreeSearch' or 'GraphSearch' stop when it adds a **goal_node** to the frontier_list? coz there is no guarantee that it is the best path to the goal. It needs **'optimization' in terms of**..?
+   - If we want the shortest path in terms of `NO.of steps`?
+   - If we want the shortest path in terms of `total cost`(by adding up the step costs)
+   - etc...
+
+> **1. Uniform Cost Search:**
+> 
 
 
 
