@@ -579,9 +579,8 @@ Then Fagaras leads to our destination and we don't add the path going back becau
 > **1. Uniform Cost Search(cheapest-first-search):**
 <img src="https://user-images.githubusercontent.com/31917400/43790205-ce291ba4-9a69-11e8-9f78-4e7a5e75a66a.jpg" />
 
- - When we've reached the goal-state, we put a path onto the frontier_list that reaches the destination. The algorithm continues to search to find the better path until we pop it off the frontier_list.
- 
->  
+ - When we've reached the goal-state, we put the **path** onto the **frontier_list** that reaches the destination, but do not stop yet. The algorithm continues to search to find the better path until we pop it off the **frontier_list**. Which path reaches first is not important.
+  
 
 
 
