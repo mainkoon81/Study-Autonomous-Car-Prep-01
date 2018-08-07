@@ -555,6 +555,8 @@ def getMatrixInverse(m):
 
 
 ## 5. The Search Problem(Route-finding)
+ - **TreeSearch**
+ - **GraphSearch**
 <img src="https://user-images.githubusercontent.com/31917400/43773718-973e68a4-9a3e-11e8-8f7c-c16633974e2d.jpg" />
 
 we are looking ahead to a modified algorithm that keeps track of **explored states** so that they aren't repeated. In the preliminary algorithm, **A(Arad) is repeated** since we are not keeping track of **explored states**. Ideally, we would not add duplicates from backtracking...(picking Arad is backtracking).
@@ -568,14 +570,18 @@ we are looking ahead to a modified algorithm that keeps track of **explored stat
 But we can avoid this repeated-path problem. The GraphSearch can eliminate the duplicates. 
 <img src="https://user-images.githubusercontent.com/31917400/43787888-fdc8dcba-9a63-11e8-8607-072e0e64f00f.jpg" />
 
-Then Fagaras leads to our destination and we don't add the path going back because they are in the 'explored_list'. We add the path that ends in Bucharest, but we don't terminate yet. The **goal_test** is not applied when we add a path to the [frontier_list]. It's applied **when we remove that path** from the [frontier_list]. 
+Then Fagaras leads to our destination and we don't add the path going back because they are in the 'explored_list'. We add the path that ends in Bucharest, but we don't terminate yet. The **`GoalTest()`** is not applied when we add a path to the [frontier_list]. It's applied **when we remove that path** from the [frontier_list]. 
  - Why doesn't our 'TreeSearch' or 'GraphSearch' stop when it adds a **goal_node** to the frontier_list? coz there is no guarantee that it is the best path to the goal. It needs **'optimization' in terms of**..?
    - If we want the shortest path in terms of `NO.of steps`?
    - If we want the shortest path in terms of `total cost`(by adding up the step costs)
    - etc...
 
-> **1. Uniform Cost Search:**
-> 
+> **1. Uniform Cost Search(cheapest-first-search):**
+<img src="https://user-images.githubusercontent.com/31917400/43790205-ce291ba4-9a69-11e8-9f78-4e7a5e75a66a.jpg" />
+
+ - When we've reached the goal-state, we put a path onto the frontier_list that reaches the destination. The algorithm continues to search to find the better path until we pop it off the frontier_list.
+ 
+>  
 
 
 
