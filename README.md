@@ -554,7 +554,9 @@ def getMatrixInverse(m):
 ## 4. Problem Solving
 
 
-## 5. The Search Problem
+## 5. The Search Problem(Route-finding)
+<img src="https://user-images.githubusercontent.com/31917400/43773718-973e68a4-9a3e-11e8-8f7c-c16633974e2d.jpg" />
+
 
 
 
