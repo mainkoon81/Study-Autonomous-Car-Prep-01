@@ -565,6 +565,8 @@ we are looking ahead to a modified algorithm that keeps track of **explored stat
    - We tracking it coz when expanding, we need to detect duplicates.
  - Ahead of the frontier is the set of the unexplored states. 
 
+But we can avoid this repeated-path problem. The GraphSearch can eliminate the duplicates. 
+<img src="https://user-images.githubusercontent.com/31917400/43782229-bec57800-9a56-11e8-9481-2521440df709.jpg" />
 
 
 
