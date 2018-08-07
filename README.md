@@ -557,7 +557,13 @@ def getMatrixInverse(m):
 ## 5. The Search Problem(Route-finding)
 <img src="https://user-images.githubusercontent.com/31917400/43773718-973e68a4-9a3e-11e8-8f7c-c16633974e2d.jpg" />
 
+we are looking ahead to a modified algorithm that keeps track of **explored states** so that they aren't repeated. In the preliminary algorithm, **A(Arad) is repeated** since we are not keeping track of **explored states**. Ideally, we would not add duplicates from backtracking...(picking Arad is backtracking).
+<img src="https://user-images.githubusercontent.com/31917400/43776822-fa6281ae-9a48-11e8-9a98-a3a10cfbe4c0.jpg" />
 
+ - As exploring the state, we keep track of the **frontier** which is a set of states at the end of the paths that we haven't explored.
+ - Behind the frontier is the set of the explored states. 
+   - tracking reason: when expanding, we need to detect duplicates.
+ - Ahead of the frontier is the set of the unexplored states. 
 
 
 
