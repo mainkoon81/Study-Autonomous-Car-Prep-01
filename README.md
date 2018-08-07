@@ -598,10 +598,11 @@ Then Fagaras leads to our destination and we don't add the path going back becau
    - It expands the path closest to the goal according to the estimate. (but this not always be the case if there are obstacles along the way.
    - When it reached the barrier..
      - continuosly expand out along the barrier to get closer and closer to the goal (it is willing to accept the path longer than other path). 
-     - or explore in the other direction to find much simpler path by popping over the barrier. 
+     - or explore in the other direction to find much simpler path by popping over the barrier. ??????
 <img src="https://user-images.githubusercontent.com/31917400/43803586-2eb3dfe6-9a91-11e8-91c4-d62815547720.jpg" />
 
-
+**WTF A-Star Search ?**(Best Estimated total-path-cost First Search):
+ - Always expands the path that has a minimum value of the function `f` defined as a sum of `g`+`h` 
 
 
 
