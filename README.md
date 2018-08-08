@@ -595,14 +595,18 @@ Then Fagaras leads to our destination and we don't add the path going back becau
 > **4. A-Star Search**
  - In Uniform-Cost Search, just like a topological map, it expands out to a certain distance, then to the farther, farther..until meet up witht the goal. The search is not really directed at any way towards the goal, it is expanding out everywhere in the space. Depending on where the goal is, and the size of the space, it takes too much time to get the goal. If we want to find it faster, we need to add more knowledge - the **estimate of the distance** from the start state to the goal.
  - **Greedy-best-firtst Search**: 
-   - It expands the path closest to the goal according to the estimate. (but this not always be the case if there are obstacles along the way.
-   - When it reached the barrier..
+   - It expands the path closest to the goal according to the estimate. (but this not always be the case if there are obstacles along the way. When it reached the barrier..
      - continuosly expand out along the barrier to get closer and closer to the goal (it is willing to accept the path longer than other path). 
      - or explore in the other direction to find much simpler path by popping over the barrier. ??????
 <img src="https://user-images.githubusercontent.com/31917400/43803586-2eb3dfe6-9a91-11e8-91c4-d62815547720.jpg" />
 
 **WTF A-Star Search ?**(Best Estimated total-path-cost First Search):
  - Always expands the path that has a minimum value of the function `f` defined as a sum of `g`+`h` 
+<img src="https://user-images.githubusercontent.com/31917400/43833532-f78cad5a-9b02-11e8-8197-676f6731de1e.jpg" />
+ 
+ - Does this search always find the lowest-cost path? No, it depends on `h`function. So `h`function should not overestimate the distance to the goal. 
+   - `h` is **optimistic**, or `h` is **admissible**. 
+ - Why **optimistic**`h` finds the lowest-cost path? 
 
 
 
