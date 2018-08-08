@@ -607,7 +607,9 @@ Then Fagaras leads to our destination and we don't add the path going back becau
  - Does this search always find the lowest-cost path? No, it depends on `h`function. So `h`function should not overestimate the distance to the goal. 
    - `h` is **optimistic**, or `h` is **admissible**. 
  - Why **optimistic**`h` finds the lowest-cost path? 
-
+   - First, when the algorithm returns the final path with the estimated cost(C), we know that by this moment, `h=0`, thus the estimated cost(C) become the actual cost. 
+   - All the paths on the frontier have an estimated cost greater than C(coz all frontiers were explored in cheapest-first order).   
+<img src="https://user-images.githubusercontent.com/31917400/43834083-cab9d9d6-9b04-11e8-99de-4f3cd91cdfc3.jpg" />
 
 
 
