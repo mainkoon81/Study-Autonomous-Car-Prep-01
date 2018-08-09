@@ -619,6 +619,7 @@ Our machine can visually perceive the world and respond to it. It gathers data t
 <img src="https://user-images.githubusercontent.com/31917400/43929930-d84950a6-9c2e-11e8-9f52-5b98545022f8.png" />
 
 > LiDAR: 'Light Detection and Ranging' is a type of sensor that uses light (a laser) to measure the distance between itself and objects that reflect light. It sends out pulses of light...The longer the reflection takes, the farther and object is from the sensor. In this sense, LiDAR is spatially coherent data, and can be used to create a visual world representation. Since LiDAR uses laser light, which sends out a thin light beam, the data it collects ends up being many single points also called **point clouds**. These point clouds can tell us a lot about an object like its shape and surface texture. By clustering points and analyzing them, this data provides enough information to classify an object or track a cluster of points over time! 
+
 > Image Classification Pipeline
 <img src="https://user-images.githubusercontent.com/31917400/43930455-611e3156-9c31-11e8-98ce-aa507b51a88e.jpg" />
 
