@@ -27,6 +27,8 @@ When a problem can be framed in the language of matrices, it's often possible to
 
 #### 5. The Search Problem
 
+#### 6. Intro to Computer Vision
+
 ------------------------------------------------------------------------------------------------------------
 
 ## 1. Kalman Filters
@@ -611,6 +613,11 @@ Then Fagaras leads to our destination and we don't add the path going back becau
    - First, when the algorithm returns the final path with the estimated cost(C), we know that by this moment, `h=0`, thus the estimated cost(C) become the actual cost. 
    - All the paths on the frontier have an estimated cost greater than C(coz all frontiers were explored in cheapest-first order).   
 <img src="https://user-images.githubusercontent.com/31917400/43834083-cab9d9d6-9b04-11e8-99de-4f3cd91cdfc3.jpg" />
+
+## 6. Intro to Computer Vision
+Our machine can visually perceive the world and respond to it. It gathers data through sensors, cameras. It extracts important information(color, shape, etc) from it. Sensors are broken down into active(RADAR, LiDAR) / passive(camera). These sensor details have serious repercussions with respect to the types of algorithms we end up using to analyze this data. Machine learning is used in combination with computer vision to give machines a way to learn from data and recognize patterns in images.
+<img src="https://user-images.githubusercontent.com/31917400/43929930-d84950a6-9c2e-11e8-9f52-5b98545022f8.png" />
+
 
 
 
