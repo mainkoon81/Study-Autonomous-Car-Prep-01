@@ -643,6 +643,8 @@ masked_image = np.copy(image)
 masked_image[mask != 0] = [0, 0, 0]
 ```
 > Color Spaces
+ - What if in the green screen color, the color field is not consistent (varying light, gradient, shadow, etc) ? RGB color selection will fail. This is where **Color spaces**(RGB, HSV, HLS) comes in. Here any color can be represented by a 3D coordinates.    
+<img src="https://user-images.githubusercontent.com/31917400/43980371-d784a262-9ce5-11e8-83f1-8e44aca2203d.jpg" />
 
 
 
