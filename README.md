@@ -622,7 +622,27 @@ Our machine can visually perceive the world and respond to it. It gathers data t
 
 > Image Classification Pipeline
 <img src="https://user-images.githubusercontent.com/31917400/43930455-611e3156-9c31-11e8-98ce-aa507b51a88e.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/43965087-434528a8-9cb6-11e8-8f40-c4ca38f72177.jpg" />
 
+**Preprocessing**
+Pre-processing images is all about **standardizing input images** so that you can move further along the pipeline and analyze images in the same way. Common pre-processing steps include:
+ - Changing how an image looks spatially, by using geometric transforms which can scale an image, rotate it, or even change how far away an object appears
+ - Changing color schemes, like choosing to use grayscale images over color images.
+> Color Masking
+ - Color can be used in image analysis and transformation. We'll be selecting an area of interest using a color threshold; a common use is with a green screen. A green screen is used to layer two images based on identifying and replacing a large green area. The first step is to isolate the green background, and then replace that green area with an image of your choosing.
+```
+# Define our color selection boundaries in RGB values
+lower_green = np.array([0,180,0]) 
+upper_green = np.array([100,255,100])
+
+# Define the masked area
+mask = cv2.inRange(image, lower_green, upper_green)
+
+# Mask the image to let the car show through
+masked_image = np.copy(image)
+masked_image[mask != 0] = [0, 0, 0]
+```
+> Color Spaces
 
 
 
