@@ -644,13 +644,11 @@ masked_image[mask != 0] = [0, 0, 0]
 ```
 > Color Spaces
  - What if in the green screen color, the color field is not consistent (varying light, gradient, shadow, etc) ? RGB color selection will fail. This is where **Color spaces**(RGB, HSV, HLS) comes in. Here any color can be represented by a 3D coordinates. color spaces provide a way to categorize colors and represent them in digital images. 
-   - **saturation** is a measurement of colorfulness. So, as colors get lighter and closer to white, they have a lower saturation value, whereas colors that are the most intense, like a bright primary color (imagine a bright red, blue, or yellow), have a high saturation value.
-   - **Hue** is the value that represents color independent of any change in brightness. So if you imagine a basic red color, then add some white to it or some black to make that color lighter or darker. 
-   - In RGB, for example, **white** has the coordinate (255, 255, 255), which has the maximum value for red, green, and blue.
-   - In HSV, HLS, Lightness and Value represent different ways to measure the relative lightness or darkness of a color. For example, a dark red will have a similar hue but much lower value for lightness than a light red. Saturation also plays a part in this; saturation is a measurement of colorfulness. So, as colors get lighter and closer to white, they have a lower saturation value, whereas colors that are the most intense, like a bright primary color (imagine a bright red, blue, or yellow), have a high saturation value. 
+   - **saturation** is a measurement of colorfulness. So, as colors get lighter and closer to white, they have a lower saturation value, whereas colors that are the most intense, like a bright primary color (imagine a bright red, blue, or yellow), have a high saturation value. **Hue** is the value that represents color independent of any change in brightness. So if you imagine a basic red color, then add some white to it or some black to make that color lighter or darker. In RGB, for example, **white** has the coordinate (255, 255, 255), which has the maximum value for red, green, and blue.
 <img src="https://user-images.githubusercontent.com/31917400/43980371-d784a262-9ce5-11e8-83f1-8e44aca2203d.jpg" />
 
-
+ - **HSV** isolates 'v'(value) component of each pixel. 'v' varies the most under different lighting conditions. 'H'(hue) channel stays consistent under shadow or brightness. If we discard 'v' and rely on 'H', we can detect colored object such as the green screen color.   
+OpenCV provides a function `hsv = cv2.cvtColor(im, cv2.COLOR_RGB2HSV)` that converts images from one color space to another.
 
 
 
