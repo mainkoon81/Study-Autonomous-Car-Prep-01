@@ -624,7 +624,7 @@ Our machine can visually perceive the world and respond to it. It gathers data t
 <img src="https://user-images.githubusercontent.com/31917400/43930455-611e3156-9c31-11e8-98ce-aa507b51a88e.jpg" />
 <img src="https://user-images.githubusercontent.com/31917400/43965087-434528a8-9cb6-11e8-8f40-c4ca38f72177.jpg" />
 
-**Preprocessing**
+### **Preprocessing**
 Pre-processing images is all about **standardizing input images** so that you can move further along the pipeline and analyze images in the same way. Common pre-processing steps include:
  - Changing how an image looks spatially, by using geometric transforms which can scale an image, rotate it, or even change how far away an object appears
  - Changing color schemes, like choosing to use grayscale images over color images.
@@ -650,6 +650,20 @@ masked_image[mask != 0] = [0, 0, 0]
  - **HSV** isolates 'v'(value) component of each pixel. 'v' varies the most under different lighting conditions. 'H'(hue) channel stays consistent under shadow or brightness. If we discard 'v' and rely on 'H', we can detect colored object such as the green screen color.   
 OpenCV provides a function `hsv = cv2.cvtColor(im, cv2.COLOR_RGB2HSV)` that converts images from one color space to another.
 
+### **feature extraction**
+A feature can easily be thought of as a "summarizer" of something. Furthermore, just as how images are really just a collection of numbers in an array, features are also just another collection of numbers in an array, although usually, they are much smaller than images. For example, if we wanted to place boxers into their weight class, we may want to do feature extraction on each fighter, and we would extract a two dimensional feature: height and weight (both of which are used to determine a weight class. Those are "features" in this sense, because they nicely ignore the irrelevant(skin color, or say, hair length, etc). But how to detect them?????? One of the breakthroughs in computer vision came from being able to automatically come up with features that are good.
+
+In the world of image, There are two main types of features:
+ - Color-based and
+ - Shape-based
+
+For example, say I wanted to classify a stop sign. Stop signs are supposed to stand out in color and shape! A stop sign is an octagon (it has 8 flat sides) and it is very red. It's red color is often enough to distinguish it, but the sign can be obscured by trees or other artifacts and the shape ends up being important, too. As a different example, say I want to avoid crashing into a car (a very important avoidance case!). I'll want to classify the object as a car, or at least recognize the car's boundaries, which are determined by shape. Specifically, I'll want to identify the edges of the vehicle, so that I can track the car and avoid it. Color is not very useful in this case, but shape is critical. **Selecting the right feature** is an important computer vision task.
+
+> **filter**
+In addition to taking advantage of color information, we also have knowledge about patterns of grayscale intensity in an image. Intensity is a measure of light and dark similar to brightness, and we can use this knowledge to detect other areas or objects of interest. For example, you can often **identify the edges** of an object by looking at an **abrupt change in intensity** which happens when an image changes from a very dark to light area.
+ - To detect these changes, you’ll be using and creating **specific image filters** that look at groups of pixels and detect big changes in intensity in an image. These filters produce an output that shows these edges.
+
+> **High-Pass Filter**
 
 
 
