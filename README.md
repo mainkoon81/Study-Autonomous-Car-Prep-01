@@ -669,6 +669,11 @@ High-pass filters detect big changes in intensity over a small area, and pattern
 
 It’s important that, for edge detection, `all of the elements **sum to 0** `because edge filters compute the **difference between neighboring pixels and around a center pixel**; they are an approximation for the derivative of an image over space. During **kernel convolution**, the 3x3 kernel is slid over every pixel in the original, grayscale image. The weights in the kernel are multiplied pair-wise around a center pixel, and then added up. **This sum becomes the value of a pixel in a new, filtered, output image.** This operation is at the center of convolutional neural networks, which use multiple kernels to extract shape-based features and identify patterns that can accurately classify sets of images. These neural networks are trained on large sets of labelled data, and they learn the most effective kernel weights; the weights that help characterize each image correctly.
 
+> High and low frequency
+frequency in images is a rate of change. Well, images change in space, and a **high frequency image** is one where the intensity changes a lot, and the level of brightness changes quickly from one pixel to the next. A **low frequency image** may be one that is relatively uniform in brightness or changes very slowly. High-frequency components also correspond to the edges of objects in images, which can help us classify those objects.
+
+
+
 
 
 
