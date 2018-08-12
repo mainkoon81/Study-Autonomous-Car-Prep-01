@@ -664,10 +664,10 @@ In addition to taking advantage of color information, we also have knowledge abo
  - To detect these changes, you’ll be using and creating **specific image filters** that look at groups of pixels and detect big changes in intensity in an image. These filters produce an output that shows these edges.
 
 > **High-Pass Filter**
+High-pass filters detect big changes in intensity over a small area, and patterns of intensity can be best seen in a grayscale image. The **filters** are in the form of matrices, often called **convolution kernels**, which are just grids of numbers that modify an image. Below is an example of a high-pass kernel that does edge detection:
+<img src="https://user-images.githubusercontent.com/31917400/44003228-2e45f490-9e47-11e8-9cf6-844cc67f97b5.jpg" />
 
-
-
-
+It’s important that, for edge detection, `all of the elements **sum to 0** `because edge filters compute the difference between neighboring pixels; they are an approximation for the derivative of an image over space. During **kernel convolution**, the 3x3 kernel is slid over every pixel in the original, grayscale image. The weights in the kernel are multiplied pair-wise around a center pixel, and then added up. This sum becomes the value of a pixel in a new, filtered, output image. This operation is at the center of convolutional neural networks, which use multiple kernels to extract shape-based features and identify patterns that can accurately classify sets of images. These neural networks are trained on large sets of labelled data, and they learn the most effective kernel weights; the weights that help characterize each image correctly.
 
 
 
