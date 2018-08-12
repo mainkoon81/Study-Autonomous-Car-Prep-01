@@ -672,8 +672,20 @@ It’s important that, for edge detection, `all of the elements **sum to 0** `be
 > High and low frequency
 frequency in images is a rate of change. Well, images change in space, and a **high frequency image** is one where the intensity changes a lot, and the level of brightness changes quickly from one pixel to the next. A **low frequency image** may be one that is relatively uniform in brightness or changes very slowly. High-frequency components also correspond to the edges of objects in images, which can help us classify those objects.
 
+### CNN
+> Convolutional layer
+ - A convolutional layer takes in an image array as input.
+ - A convolutional layer can be thought of as a set of image **filters**.
+   - Each filter extracts a specific kind of feature (like an edge, blur, etc).
+ - The output of a given convolutional layer is a set of **feature maps**, which are differently filtered versions of the input image.
 
+> Fully-connected layer
+ - Its job is to connect the input to a desired form of output. 
+   - As an example, say we are sorting images into two classes: day and night, you could give a fully-connected layer a set of feature maps and tell it to use a combination of these features (multiplying them, adding them, combining them, etc.) to output a prediction: whether a given image is likely taken during the "day" or "night." This output prediction is sometimes called the output layer.
 
+Typically, CNN's are made of many convolutional layers and even include other processing layers whose job is to standardize data or reduce its dimensionality (for a faster network).
+ 
+ 
 
 
 
