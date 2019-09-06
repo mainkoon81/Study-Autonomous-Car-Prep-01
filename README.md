@@ -1,4 +1,4 @@
-# Study-00-Theory
+# 00-Theory
 
 > **Sensors**
 We gather data from the car's sensors. Self-driving cars mainly use three types of sensors to observe the world:
